@@ -1,0 +1,148 @@
+---
+
+---
+
+<div id="cookie-consent-banner" class="cookie-consent-banner">
+    <h3>🍪 Cookies!</h3>
+    <p>AI told me I need this warning to make my marketing better! I'd prefer you accepted everything, but legally I have to give you a choice.</p>
+
+    <div class="bt_ctnr">
+        <button id="btn-accept-all" class="cookie-consent-button btn-success">Accept All</button>
+        <button id="btn-accept-some" class="cookie-consent-button btn-outline">Accept Selection</button>
+        <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">Reject All</button>
+    </div>
+    <div class="cookie-consent-options">
+    <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>Necessary</label>
+    <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>Analytics</label>
+    <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>Preferences</label>
+    <label><input id="consent-marketing" type="checkbox" value="Marketing">Marketing</label>
+    </div>
+</div>
+
+<script>
+    import "../js/consent.js"
+</script>
+
+<style>
+.cookie-consent-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--light-a);
+    color: var(--c2-d);
+    padding: 2rem clamp(2.1rem,5vw,4rem) 2rem;
+    text-align: center;
+    z-index: 1000;
+    width: fit-content;
+    max-width: 75vw;
+    border-radius: clamp(2rem,8vw,4rem) clamp(2rem,8vw,4rem) 0 0;
+    max-width: 52rem;
+    border: 0.2rem solid var(--light-b);
+    margin-inline: auto;
+}
+
+.cookie-consent-banner h3 {
+    font-size: 3rem;
+    margin-bottom: 0.7rem;
+    color: var(--c2-a);
+    font-weight: 650;
+    line-height: 1;
+}
+
+.cookie-consent-banner h3 + p {
+    margin-bottom: 1em;
+    font-weight: 500;
+    color: var(--grey);
+    line-height: 1.4;
+    /* max-width: 40rem; */
+    margin-inline: auto;
+    font-size: clamp(1.2rem,3.8vw,1.7rem);
+}
+
+.cookie-consent-banner .bt_ctnr {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.cookie-consent-button {
+    border: none;
+    padding: 0.9rem 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    /* width: 100%; */
+    /* max-width: 20rem; */
+    /* max-width: 20rem; */
+    flex: 1;
+}
+
+.cookie-consent-button:first-of-type {
+    min-width: 100%;
+    /* display: block; */
+}
+
+.cookie-consent-button:hover {
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-consent-button:active {
+    opacity: .5;
+}
+
+.cookie-consent-button.btn-success {
+    background-color: var(--c2-b);
+    color: white;
+}
+
+.cookie-consent-button.btn-grayscale {
+    background-color: var(--dark);
+    color: var(--light-a);
+    font-weight: 400;
+}
+
+.cookie-consent-button.btn-outline {
+    background-color: var(--light-b);
+    color: var(--c2-a);
+    border: 0.1rem solid var(--light);
+}
+
+.cookie-consent-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.cookie-consent-options label {
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+.cookie-consent-options input {
+    margin-right: 5px;
+}
+
+
+
+
+@media screen and (min-width:900px) {
+    .cookie-consent-button:first-of-type {
+        min-width: unset;
+    }
+
+    .cookie-consent-button {
+        flex: unset;    
+        padding-inline: 3rem;
+    }
+}
+
+</style>
