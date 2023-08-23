@@ -22,6 +22,7 @@ const blog = defineCollection({
 const testimonialsCollection = defineCollection({
     type: 'content', // v2.5.0 and later
     schema: z.object({
+        order: z.number().optional(),
         avatar: z.string(),
         name: z.string(),
         location: z.string().optional(),

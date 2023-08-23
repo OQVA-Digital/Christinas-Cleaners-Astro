@@ -4,15 +4,30 @@ import Layout from '../layouts/Layout.astro';
 import '../css/home.css'
 
 import { getCollection } from "astro:content";
-const testimonials = await getCollection("testimonials");
+const testimonials = (await getCollection('testimonials')).sort((a, b) => {
+    // Check if both items have an 'order' property
+    if (a.data.order !== undefined && b.data.order !== undefined) {
+        return a.data.order - b.data.order; // Sort by 'order' if both have it
+    } else if (a.data.order !== undefined) {
+        return -1; // 'a' has 'order', but 'b' doesn't, so 'a' comes first
+    } else if (b.data.order !== undefined) {
+        return 1; // 'b' has 'order', but 'a' doesn't, so 'b' comes first
+    } else {
+        // Both 'a' and 'b' don't have 'order', fallback to sorting by 'title'
+        return a.data.name.localeCompare(b.data.name);
+    }
+});
+
 ---
 
 <Layout title="Christina's Cleaners · Empowering Ukrainian Refugees">
+
 	<script>
 		import "../js/main.js"
 		import "../js/menu.js"
 		import "../js/form.js"
 		// import "../js/lazyload.js"
+        import "../css/tiny-slider.css"
 	</script>
 
 	<main>
@@ -263,10 +278,6 @@ const testimonials = await getCollection("testimonials");
         </section>
 
         <section class="testimonials" id="testimonials">
-			<script>
-				import "../js/tiny-slider.js"
-				import "../css/tiny-slider.css"
-			</script>
 
             <div class="width">
                 <div class="ctnr">
@@ -276,13 +287,30 @@ const testimonials = await getCollection("testimonials");
                         <p>At Christina's Cleaners, we believe our work speaks for itself, but we understand the value of hearing it from those who have experienced our services first-hand. <strong>Here are some testimonials from our satisfied clients in Oxfordshire.</strong></p>
                     </div>
                     
+                    <script is:inline src="/js/tiny-slider.js"></script>
+                
+                    <script>
+                        var slider = tns({
+                            container: '.testimonials .slider',
+                            center: true,
+                            items: 1,
+                            slideBy: 'page',
+                            speed: 500,
+                            mouseDrag: true,
+                            autoWidth:true,
+                            controls:false,
+                            navPosition:'bottom',
+                            navAsThumbnails:true
+                        });
+                    </script>
+                    
                     <div class="slider">
                         {
                             testimonials.map((testimonials) => (
                                 <div class="box">
                                     <div class="flex">
                                         <div class="profile">
-											<img class="photo" src={testimonials.data.avatar} alt={`${testimonials.data.name}'s avatar'`} loading="lazy"/>
+											<img class="photo" src={testimonials.data.avatar} alt={`${testimonials.data.name}'s avatar'`}/>
 
                                             <div>
                                                 <span class="name">{testimonials.data.name}</span>

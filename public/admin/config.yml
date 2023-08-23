@@ -26,6 +26,7 @@ collections:
     create: true
     slug: "{{name}}"
     fields:
+      - {label: "Order", name: "order", widget: "number", required: false}
       - {label: "Avatar", name: "avatar", widget: "image", time_format: false}
       - {label: "Name", name: "name", widget: "string"}
       - {label: "Location", name: "location", widget: "string", required: false}
