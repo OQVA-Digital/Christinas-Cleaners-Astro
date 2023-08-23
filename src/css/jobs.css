@@ -15,16 +15,6 @@ main .width {
     width: clamp(24rem, 84vw, 76rem);
 }
 
-.hambt {
-    position: relative;
-    width: clamp(2.5rem, 8vw, 3.5rem);
-    height: clamp(2.5rem, 8vw, 3.5rem);
-}
-
-.hambt div {
-    border-radius: 0.2rem;
-}
-
 h1 {
     font-size: clamp(2.5rem, 9vw, 6.2rem);
     line-height: 1.15;

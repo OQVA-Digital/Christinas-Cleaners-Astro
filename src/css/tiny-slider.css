@@ -247,7 +247,7 @@
     }
 
     .tns-controls button:not([disabled]):hover {
-        background-color:var(--primary-b);
+        background-color:var(--primary-d2);
         transition: background-color 0.1s ease;
         -webkit-transition: background-color 0.1s ease;
         -moz-transition: background-color 0.1s ease;

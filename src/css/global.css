@@ -1,23 +1,23 @@
 :root {
-    --light: #f8f8ff;
-    --light-a: #e6f3ff;
+    --light: #ffffff;
+    --light-a: #e6fff3;
+    --light-b: #d9e8f6;
 
     --dark: #242d35;
-    --dark-a: #1b3254;
+    --dark-a: #225440;
 
-    --c1: #ffd700;
-    --c1-a: #bfa300;
-    --c1-b: #403600;
-    --c1-c: #ffe471;
+    --primary: #F1C40F;
+    --primary-d1: #bfa300;
+    --primary-d2: #403600;
+    --primary-l1: #ffe471;
 
-    --c2: #0057b7;
-    --c2-a: #004c9e;
-    --c2-b: #0072d8;
-    --c2-c: #0092ff;
+    --c2: #00A859;
+    --c2-a: #008F4C;
+    --c2-b: #00B561;
+    --c2-c: #00F583;
     --c2-d: #001b38;
-    --c2-e: #93c2e5;
+    --c2-e: #86d995;
 
-    --c3: #ff4400;
     --width: clamp(24rem, 84vw, 150rem);
     --header-height: clamp(5rem, calc(7vh + 7vw), 8rem);
 }
@@ -26,6 +26,13 @@ html {
     font-size: 10px;
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Signika;
+    src: url(/fonts/SignikaNegative-VariableFont_wght.ttf);
+    font-display: swap;
+    font-weight: 100-900;
 }
 
 html,
@@ -46,7 +53,11 @@ button,
 input,
 textarea,
 select {
-    font-family: 'Golos Text', sans-serif;
+    font-family: 'Signika', sans-serif;
+}
+
+strong, b {
+    font-weight: inherit;
 }
 
 body {
@@ -134,13 +145,6 @@ textarea {
     min-height: 8rem;
     max-height: 30rem;
 }
-
-
-ul,
-ol {
-    padding: unset;
-}
-
     
 .cta_ctnr {
     display: flex;
@@ -151,7 +155,7 @@ ol {
 }
 
 .cta_ctnr a:not(.cta) {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -159,8 +163,8 @@ ol {
 }
     
 .cta {
-    border-radius: 0.6rem;
-    font-size: clamp(1.2rem, 4.2vw, 1.6rem);
+    border-radius: 1rem 0.4rem;
+    font-size: clamp(1.2rem, 4.5vw, 1.8rem);
     padding: clamp(1rem, 3.5vw, 1.5rem) clamp(0.9rem, 5vw, 3rem);
     height: fit-content;
     line-height: 1;
@@ -249,7 +253,7 @@ form button[type='submit'].disabled {
 }
 
 body form button[type='submit'].submited {
-    background-color: var(--c1);
+    background-color: var(--primary);
     color: var(--c2-b);
     font-weight: 600;
     pointer-events: none;

@@ -4,12 +4,12 @@
 
 <header>    
     <div class="width">
-        <a href="/" class="logo_anchor" aria-label="home button">
-            <img src="/logo/logo_logotype.svg" alt="Fabian's Cleaning Services Logo" width="160" height="80">
+        <a href="/" class="logo_anchor reveal" aria-label="brand logo" title="FABIAN'S OFFICE FLOOR CLEANING SPECIALISTS IN LONDON">
+            <img src="/logo/full-logo.svg" alt="Fabian's Cleaning Services Logo" width="160" height="80">
         </a>
 
         <div class="flex">
-            <a href="#get-a-quote" class="cta" aria-label="Get a quote button">Get a Quote</a>
+            <a href="/contact/" class="cta" aria-label="Get a quote button">Get a Quote</a>
             
             <button class="hambt" type="button" aria-label="toggle menu button">
                 <span></span>
@@ -23,27 +23,26 @@
 
                     <a href="/#services" aria-label="Go to services">Services</a>
 
-                    <a href="/#about-us" aria-label="Go to About Us">About</a>
-
                     <a href="/blog/" aria-label="Go to services">Blog</a>
 
-                    <!-- <a href="/#social-impact" aria-label="Go to Social Impact">Social Impact</a> -->
+                    <a href="/#about" aria-label="Go to About Us">About</a>
 
-                    <!-- <a href="#testimonials" aria-label="Go to testimonials">Testimonials</a> -->
+                    <a href="/#location" aria-label="Go to Location">Location</a>
 
-                    <a href="tel:447425078684" aria-label="Call us at +44 74250 78684">Call us</a>
-
-                    <a href="mailto:info@christinas-cleaners.co.uk" aria-label="E-mail us at info@christinas-cleaners.co.uk">Email us</a>
+                    <a href="/contact/" aria-label="Go to Location">Contact</a>
 
                     <a href="/jobs/" class="jobs" aria-label="Work with us link">Work with us</a>
                 </nav>
             </div>
         </div>
     </div>
+
+    <script>
+		import "../js/menu.js"
+    </script>
 </header>
 
 <style>
-
 
     header {
         width: 100%;
@@ -56,9 +55,10 @@
         justify-content: space-between;
         align-items: center;
         z-index: 3;
-        backdrop-filter: blur(0.3rem);
+        /* backdrop-filter: blur(0.3rem); */
         /* border-bottom: 0.2rem solid var(--light-a); */
         box-shadow: 0 2.5rem 1rem -2rem rgb(147 194 229 / 15%);
+        border-bottom: 0.1rem solid var(--light-b);
     }
     
     header>.width {
@@ -74,14 +74,15 @@
     
     header .logo_anchor {
         height: var(--header-height);
-        width: clamp(11rem,calc(12vh + 12vw),17rem);
-        min-width: clamp(11rem,calc(12vh + 12vw),17rem);
+        width: clamp(9rem,40vmin,19rem);
+        min-width: clamp(9rem,40vmin,19rem);
         display: flex;
         align-items: center;
     }
     
     header .logo_anchor img {
         height: calc(var(--header-height) * 0.7);
+        transform: translateY(-7%);
     }
     
     .nav_overflow {
@@ -90,7 +91,7 @@
         right: 0;
         bottom: 0.1rem;
         width: 23rem;
-        height: 45rem;
+        height: 42rem;
         transform: translateY(100%);
         pointer-events: none;
     }
@@ -111,7 +112,7 @@
         max-height: 70vh;
         overflow: auto;
         background-image: linear-gradient(170deg, #ffffff22, transparent 62%);
-        font-size: clamp(1.4rem, 5vw, 1.8rem);
+        font-size: clamp(1.4rem,6vw,2rem);
     }
     
     header nav.show {
@@ -134,10 +135,12 @@
     }
     
     header .cta {
-        background-color: var(--c1);
-        font-weight: 700;
-        color: var(--c2);
+        font-weight: 600;
         white-space: nowrap;
+        color: var(--light);
+        /* border: 0.2rem solid var(--light); */
+        /* box-shadow: -0.35rem 0.35rem var(--primary), -0.7rem 0.7rem #fff8; */
+        background-color: var(--c2);
     }
     
     .hambt {
@@ -158,6 +161,12 @@
         border-radius: 0.2rem 0 0 0.2rem;
     }    
 
+
+    header .logo_anchor img[src=""] {
+        background-color: var(--light-b);
+        display: flex;
+        border-radius: 0.4rem;
+    }
 
 
 @media (min-width:800px) {
@@ -211,25 +220,24 @@
         position: relative;
         transform: unset;
         background-color: unset;
-        color: var(--c2);
+        color: var(--dark-a);
         flex-direction: row;
         font-weight: 500;
         overflow: unset;
         padding: unset;
-        gap: clamp(0rem, calc(3vw - 4rem), 0.6rem);
+        gap: clamp(0rem,calc(5vw - 4rem),0.6rem);
         height: 100%;
         align-items: center;
-        /* width: clamp(5rem, calc(98vw - 50rem), 82rem); */
         width: unset;
         right: unset;
         top: unset;
         white-space: nowrap;
         display: inline-flex;
         background-image: unset;
+        font-size: clamp(1.4rem,1.6vw,1.9rem);
     }
 
     header nav a {
-        font-size: clamp(1.4rem, 1.4vw, 1.7rem);
         padding: 1rem clamp(0.4rem, calc(4vw - 3.7rem), 1.8rem);
         transition: background-color 0.3s ease;
         background-color: transparent;
@@ -240,7 +248,7 @@
     }
 
     header nav a:hover {
-        background-color: white;
+        background-color: var(--light-b);
         transition: background-color 0s ease;
     }
 

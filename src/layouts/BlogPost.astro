@@ -1,7 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import Header from '../components/Header.astro';
-import Strip from '../components/Strip.astro';
+import Stripe from '../components/Stripe.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -57,7 +57,7 @@ declare global {
 	</head>
 
 	<body>
-		<Strip></Strip>
+		<Stripe></Stripe>
 		<Header></Header>
 		<main>
 			<div class="ctnr">
@@ -67,7 +67,9 @@ declare global {
 			{heroImage && <img width={720} height={360} src={heroImage} alt={description} class="hero" />}
 			<article>
 
-				<div class="heading_ctnr">	
+				<div class="heading_ctnr">
+					<span class="ai_disclaimer">I’m Fabian, I’m better at cleaning floors than writing content, <b>so I get AI to write mine</b>.</span>
+	
 					<FormattedDate date={pubDate} />
 	
 					<h1 class="title">{title}</h1>
@@ -86,6 +88,6 @@ declare global {
 		</main>
 
 		<CookieConsentBanner></CookieConsentBanner>
-		<Strip></Strip>
+		<Stripe></Stripe>
 	</body>
 </html>

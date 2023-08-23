@@ -8,13 +8,12 @@ main section {
 }
 
 .back {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .posts {
     display: flex;
     flex-flow: row wrap;
-    gap: 2rem;
 }
 
 .posts, .posts ol, .posts li {
@@ -23,17 +22,15 @@ main section {
 }
 
 .posts li {
-    flex: 1;
-    min-width: clamp(10rem, 85vw, 50rem);
-    display: flex;
-    flex-direction: column;
+    width: 100%;
 }
 
 .posts li a {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
+    width: 100%;
     overflow: hidden;
-    flex: 1;
+    gap: 1.5rem;
     border-radius: 0.4rem;
     -webkit-border-radius: 0.4rem;
     -moz-border-radius: 0.4rem;
@@ -47,15 +44,13 @@ main section {
     flex: 1;
     min-width: 22rem;
     border-radius: 0.4rem;
-    background-color: var(--c1);
-    min-height: 13rem;
-    max-height: 30rem;
+    background-color: var(--light-b);
 }
 
 .posts .content {
     display: flex;
     flex-direction: column;
-    /* width: clamp(15rem, 85vw, 60rem); */
+    width: clamp(15rem, 85vw, 60rem);
     justify-content: center;
     padding: 2rem 1rem 1rem clamp(2rem, 5vw, 5rem);
 }
@@ -73,12 +68,12 @@ main section {
     font-size: clamp(2.6rem, 8vw, 4rem);
     line-height: 1.1;
     cursor: pointer;
+    margin-bottom: 0.6rem;
 }
 
 .posts a {
     font-weight: 600;
-    border: 0.1rem solid var(--c2-e);
-    background-color: #EAEEFF;
+    border: 0.1rem solid var(--light-b);
     transition: color 0.4s ease;
     -webkit-transition: color 0.4s ease;
     -moz-transition: color 0.4s ease;
@@ -87,10 +82,9 @@ main section {
 }
 
 h1 {
-    margin-bottom: 2rem;
-    font-size: clamp(3rem, 10vw, 6rem);
+    margin-bottom: 1rem;
+    font-size: clamp(4rem, 15vw, 6rem);
     color: var(--c2);
-    line-height: 1.1;
 }
 
 .posts hr {

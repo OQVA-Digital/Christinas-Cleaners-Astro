@@ -1,0 +1,43 @@
+---
+    import '../css/forms.css'
+---
+
+<section class="contact default_bg" id="contact">
+    <div class="ctnr reveal">
+        <form name="contact" method="POST" data-netlify="true">
+            <h2 class="title">Get in touch</h2>
+
+            <p>Ready for a transformation? Drop me a line, and let's make your office carpets gleam!</p>
+
+            <div class="flex">
+                <p>
+                    <label>First name: <input type="text" name="name" required/></label>
+                </p>
+
+                <p>
+                    <label>Last name: <input type="text" name="name" required/></label>
+                </p>
+            </div>
+
+            <p>
+                <label>Email: <input type="email" name="email" required/></label>
+            </p>
+
+            <p>
+                <label>Message: <textarea name="message" required></textarea></label>
+            </p>
+
+            <p>
+                <button type="submit" aria-label="Submit contact form">Request a quote</button>
+						
+                <noscript>You need to enable JavaScript on your browser to submit emails.</noscript>
+            </p>
+
+            <!-- <p class="email_us">Need more details? Drop us an email at <a href="mailto:fabian@fabiansofficefloorcleaningspecialistsinlondon.co.uk" aria-label="E-mail us to fabian@fabiansofficefloorcleaningspecialistsinlondon.co.uk">fabian@fabiansofficefloorcleaningspecialistsinlondon.co.uk</a>.</p> -->
+        </form>
+    </div>
+
+    <script>
+        import "../js/form.js";
+    </script>
+</section>

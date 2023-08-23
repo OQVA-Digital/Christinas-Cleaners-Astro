@@ -3,27 +3,33 @@ main {}
 
 section.intro {
     /* min-height: 100rem; */
-    background-color: var(--c1);
+    background-color: var(--light-a);
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: clamp(3rem, 9vw, 6rem) 0 clamp(3rem, 5vw, 5rem) 0;
+    padding: clamp(2rem, 5vw, 7rem) 0 clamp(3rem, 7vw, 15rem) 0;
     position: relative;
 }
 
 .intro>.ctnr {}
 
 h1 {
-    font-size: clamp(2.1rem, calc(1.8vh + 2vw), 4.6rem);
-    line-height: 1.4;
-    margin-bottom: 1.2rem;
-    font-weight: 700;
+    font-size: clamp(2.1rem, 10.5vmin, 7.2rem);
+    line-height: 1.15;
+    margin-bottom: 2.4rem;
+    font-weight: 650;
+    color: var(--dark-a);
+    max-width: 72rem;
 }
 
-h1 strong {
-    color: var(--c2);
-    background-color: var(--c1-c);
-    font-weight: inherit;
+h1 span {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+h1 strong, h1 b {
+    color: var(--c2-b);
+    font-weight: 750;
 }
 
 .intro h2 {
@@ -39,12 +45,10 @@ h1 strong {
     color: var(--c2);
 }
 
-.intro .cta_ctnr .cta {
-    /* background-color: var(--light); */
-    color: var(--c2);
-    border: 0.2rem solid var(--light);
-    box-shadow: -0.35rem 0.35rem var(--c1), -0.7rem 0.7rem #fff8;
-    background-color: var(--c1);
+.main.cta {
+    color: var(--light);
+    background-color: var(--c2);
+    font-weight: 500;
 }
 
 .intro .cta_ctnr a:not(.cta)::after {
@@ -127,7 +131,7 @@ h1 strong {
     object-fit: cover;
     object-position: center;
     border-radius: clamp(1.5rem, 5vw, 4rem);
-    border: 0.2rem solid var(--c1-c);
+    border: 0.2rem solid var(--light);
     z-index: 1;
     clip-path: inset(1px 1px);
     position: sticky;
@@ -135,7 +139,7 @@ h1 strong {
     /* background-image: -webkit-image-set(url(/video/christina-poster.jpg) 1x, url(/video/christina-poster.webp) 1x); */
     background-size: cover;
     background-position: center;
-    background-color: rgb(230 243 255 / 60%);
+    background-color: var(--light-b);
 }
 
 .intro video::-webkit-media-controls-panel {
@@ -152,7 +156,7 @@ h1 strong {
     display: none;
 }
 
-.intro .bottom_wave {
+/* .intro .bottom_wave {
     background-image: url(/bottom_wave.svg);
     width: 100%;
     height: 10vw;
@@ -162,8 +166,8 @@ h1 strong {
     bottom: 0;
     transform: translateY(100%);
     background-repeat: no-repeat;
-    box-shadow: 0 -0.3rem var(--c1);
-}
+    box-shadow: 0 -0.3rem var(--primary);
+} */
 
 .fold_bt {
     position: fixed;
@@ -212,17 +216,20 @@ h1 strong {
 
 
 
+section.top_distance {
+    padding: clamp(14rem, 65vw, 23rem) 0 0;
+}
 
-
-
+section .width {
+    margin-inline: auto;
+}
 
 section.services {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: clamp(14rem, 65vw, 27rem) 0 clamp(9rem, 10vw, 13rem);
     position: relative;
-    scroll-margin: calc(clamp(14rem, 55vw, 23rem) * -0.5);
+    scroll-margin: calc(var(--header-height) + 11vh);
 }
 
 .services .width {
@@ -234,18 +241,24 @@ section.services {
     width: clamp(24rem, 95vw, 150rem);
 }
 
-h2+.txt {
-    text-align: center;
-    font-size: clamp(1.4rem, 3.6vmin, 1.55rem);
-    margin: 1rem auto 3rem;
-    line-height: 1.5;
-    width: 90%;
-    max-width: 100%;
+section + hr {
+    width: clamp(10rem, 24vw, 40rem);
+    margin-inline: auto;
+    margin-block: clamp(4rem, 13vw, 8rem);
+    border: none;
+    height: 0.2rem;
+    background-color: var(--light-b);
 }
 
-.services h2+.txt {
+h2+.txt {
+    text-align: center;
+    font-size: clamp(1.4rem, 4.8vmin, 2.5rem);
+    margin: 1rem auto 0;
+    line-height: 1.5;
+    max-width: 100%;
     font-weight: 500;
-    max-width: 87rem;
+    font-weight: 500;
+    max-width: clamp(10rem, 81vw, 97rem);
 }
 
 .testimonials h2+.txt {
@@ -259,23 +272,93 @@ h2+.txt {
 .testimonials h2+.txt strong,
 .testimonials h2+.txt b {
     font-weight: inherit;
-    color: var(--c1);
+    color: var(--primary);
 }
 
 
-.services .txt b,
-.services .txt strong {
+h2+.txt b,
+h2+.txt strong {
     font-weight: 600;
     color: var(--c2);
+}
+
+
+
+section.blog {
+    position: relative;
+    padding-block: clamp(4rem, 5vw, 5.5rem);
+    background-color: var(--c2);
+    margin-block: clamp(3rem, 17vw, 9rem);
+    color: var(--light);
+    border-radius: 0.4rem clamp(5rem, 10vw, 11rem) 0 clamp(5rem, 10vw, 11rem);
+    -webkit-border-radius: 0.4rem clamp(5rem, 10vw, 11rem) 0 clamp(5rem, 10vw, 11rem);
+    -moz-border-radius: 0.4rem clamp(5rem, 10vw, 11rem) 0 clamp(5rem, 10vw, 11rem);
+    -ms-border-radius: 0.4rem clamp(5rem, 10vw, 11rem) 0 clamp(5rem, 10vw, 11rem);
+    -o-border-radius: 0.4rem clamp(5rem, 10vw, 11rem) 0 clamp(5rem, 10vw, 11rem);
+    width: clamp(24rem, 91vw, 150rem);
+    margin-inline: auto;
+    background-image: linear-gradient(170deg, #ffffff33, transparent 50%);
+}
+ 
+section.blog::before, section.blog::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom:calc(clamp(5rem, 10vw, 11rem) * -2 + 0.1px);
+    width: calc(clamp(5rem, 10vw, 11rem) * 2);
+    height: calc(clamp(5rem, 10vw, 11rem) * 2);
+    z-index: -1;
+}
+
+section.blog::before {
+    background-color: var(--c2);
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform-origin: top right;
+}
+
+section.blog::after {
+    background-color: var(--light);
+    border-radius: clamp(5rem, 10vw, 11rem);
+    -webkit-border-radius: clamp(5rem, 10vw, 11rem);
+    -moz-border-radius: clamp(5rem, 10vw, 11rem);
+    -ms-border-radius: clamp(5rem, 10vw, 11rem);
+    -o-border-radius: clamp(5rem, 10vw, 11rem);
+}
+
+section.blog > .ctnr {
+    /* width: var(--width); */
+    margin-inline: auto;
+}
+
+section.blog h2 {
+    color:var(--light);
+}
+
+section.blog p {
+    color:var(--light);
+    font-size: 0.9em;
+}
+
+section.blog .cta {
+    background-color: var(--light);
+    margin-inline: auto;
+    display: block;
+    margin-top: 2rem;
+    color: var(--c2-a);
+    font-weight: 800;
 }
 
 .services .txt p {
     margin-bottom: 1rem;
 }
 
-.services h2 {
+section h2 {
     text-align: center;
-    font-size: clamp(2rem, 9vw, 5rem);
+    font-size: clamp(2rem, 11vw, 7rem);
     color: var(--c2);
     font-weight: 700;
 }
@@ -308,10 +391,11 @@ h2+.txt {
 .services .ctnr {
     display: flex;
     flex-flow: row wrap;
-    gap: clamp(2rem, 9vw, 3.5rem);
+    gap: clamp(2rem, 11vw, 5rem);
     align-content: center;
     justify-content: center;
     width: 100%;
+    margin-block: 2rem;
 }
 
 .services .box {
@@ -324,14 +408,11 @@ h2+.txt {
     align-items: center;
     gap: 1.8rem;
     border-radius: 1.6rem;
-    min-width: clamp(15rem, calc(33vh + 20vw), 32rem);
-    max-width: clamp(15rem, calc(33vh + 20vw), 32rem);
-    /* max-width: 85vw; */
-    /* min-height: clamp(20rem, 75vw, 38rem); */
+    min-width: clamp(20rem, 74vw, 40rem);
+    max-width: clamp(20rem, 75vw, 40rem);
     justify-content: space-between;
-    /* max-width: 30rem; */
-    /* flex: 1; */
     box-shadow: 0 2.5rem 1rem -2rem rgb(147 194 229 / 40%);
+    border: 0.1rem solid var(--light-b);
 }
 
 .services .box .price {
@@ -368,19 +449,16 @@ h2+.txt {
 }
 
 .services .price .discount span {
-
-    color: var(--c3);
-
+    /* color: var(--c3); */
     font-weight: 600;
-
     font-size: 0.8em;
 }
 
 .services .price .final_price {
     font-size: 3.3rem;
     background-image: linear-gradient(-170deg, #ffffff66, transparent 62%);
-    border: 0.2rem solid var(--c3);
-    background-color: var(--c3);
+    /* border: 0.2rem solid var(--c3);
+    background-color: var(--c3); */
     padding: 0.5rem 1.1rem;
     border-radius: 0.7rem;
     align-items: center;
@@ -476,10 +554,11 @@ h2+.txt {
 }
 
 .services .box h3 {
-    font-size: clamp(2.2rem, 6vmin, 2.7rem);
+    font-size: clamp(2.2rem, 9vmin, 3.3rem);
     color: var(--c2-b);
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
+    font-weight: 650;
 }
 
 .services .box h3 svg {
@@ -490,24 +569,23 @@ h2+.txt {
 
 .services .box p {
     color: var(--dark-a);
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.4;
     margin-bottom: 1rem;
-    font-size: clamp(1.4rem, 3.5vw, 1.5rem);
+    font-size: clamp(1.4rem, 4.4vw, 1.8rem);
 }
 
 .services .box p b,
 .services .box strong {
-    color: var(--c2);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .services .box a {
     width: 100%;
     text-align: center;
-    background-color: var(--c2-b);
-    font-weight: 600;
-    color: var(--c1);
+    background-color: var(--c2);
+    font-weight: 500;
+    color: var(--light);
     box-sizing: border-box;
 }
 
@@ -519,15 +597,70 @@ h2+.txt {
     right: 0;
     width: 38%;
     height: 0.8rem;
-    background-color: var(--c1);
+    background-color: var(--c2-b);
     margin: 0 auto;
     border-radius: 1rem;
-    box-shadow: 0 -0.7rem 0 0.7rem var(--light-a);
+    box-shadow: 0 -0.2rem 0 0.7rem var(--light-a);
 }
 
 
 
 
+
+
+section.sectors>.ctnr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section.sectors .cta {
+    margin-top: 2rem;
+}
+
+
+
+
+section.clients {
+    
+}
+
+.clients>.ctnr {
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: clamp(3rem, 5vw, 3.5rem) 0; */
+}
+
+.clients h2 {
+    
+}
+
+.clients h2+p {
+    text-align: center;
+    font-size: clamp(1.4rem, 5vmin, 2.5rem);
+    margin: 1rem auto 3rem;
+    line-height: 1.5;
+    width: 90%;
+    max-width: 100%;
+}
+
+.clients .content {
+    display: flex;
+    flex-direction: row;
+    gap: clamp(2rem, 9vw, 5rem);
+    overflow: auto;
+    padding: 0 calc((100% - var(--width)) / 2) clamp(2rem, 4vw, 8rem);
+    margin-top: 3rem;
+}
+
+.clients .content img, .clients .content picture {
+    height: clamp(8rem, 10vw, 9rem);
+    min-width: fit-content;
+}
 
 
 
@@ -550,11 +683,15 @@ section.about {
     align-items: center;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
     padding: clamp(7rem, 18vmax, 14rem) 0 0;
-    background-color: var(--c2-e);
+    background-color: var(--light-b);
     /* background-image: url(/video/gloves-cleaning-poster.jpg);
     background-image: -webkit-image-set(url(/video/gloves-cleaning-poster.jpg) 1x, url(/video/gloves-cleaning-poster.webp) 1x); */
     background-position: center;
     background-size: cover;
+}
+
+section.about h2, .where h2 {
+    text-align: left;
 }
 
 .about video {
@@ -584,11 +721,11 @@ section.about {
     flex-direction: column;
     gap: 1rem;
     border: 0.2rem solid var(--light);
-    /* box-shadow: 0 2rem 5rem -2.3rem var(--c1-c); */
-    backdrop-filter: blur(0.6rem);
+    /* box-shadow: 0 2rem 5rem -2.3rem var(--primary-l1); */
+    /* backdrop-filter: blur(0.6rem); */
 }
 
-.about .cta_ctnr {
+.about .cta_ctnr, .where .cta_ctnr {
 
     margin-top: 1rem;
 }
@@ -596,8 +733,8 @@ section.about {
 .ctnr {}
 
 .about h2 {
-    font-size: clamp(2rem, 7.5vw, 3.8rem);
-    color: var(--c2-b);
+    font-size: clamp(2rem, 10vw, 5rem);
+    color: var(--c2);
     font-weight: 700;
 }
 
@@ -607,7 +744,7 @@ section.about {
 }
 
 .about .width p {
-    font-size: clamp(1.3rem, 3.8vw, 1.7rem);
+    font-size: clamp(1.4rem, 4.4vw, 1.9rem);
     font-weight: 500;
     line-height: 1.5;
 }
@@ -625,11 +762,10 @@ section.about {
     letter-spacing: 0.06rem;
 }
 
-.about .cta_ctnr a:not(.cta) {
-    font-size: clamp(1.4rem, 2vw, 1.5rem);
+.cta_ctnr a:not(.cta) {
+    font-size: clamp(1.4rem, 4.5vw, 2rem);
     color: var(--c2-a);
     letter-spacing: 0.06rem;
-    flex: 1;
     font-weight: 600;
 }
 
@@ -641,38 +777,51 @@ section.about {
 
 
 
-.about .social_impact {
+section.where {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: clamp(4rem, 12vw, 7rem) 0;
     background-color: rgb(230 243 255 / 85%);
     width: 100%;
     z-index: 1;
-    backdrop-filter: blur(0.4rem);
-    margin-top: clamp(6rem, 12vmax, 14rem);
-    scroll-margin: var(--header-height);
+    /* backdrop-filter: blur(0.4rem); */
+    /* margin-top: clamp(6rem, 12vmax, 14rem); */
+    margin-top: 3rem;
+    scroll-margin: calc(var(--header-height) + 15vh);
 }
 
-.social_impact h2 {
+.where h2 {
     /* text-align: center; */
     font-size: clamp(2rem, 9vw, 5rem);
     color: var(--c2-b);
     font-weight: 700;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
-.about .social_impact p {
-    font-size: clamp(1.3rem, 3.8vw, 1.8rem);
+section.where p {
+    font-size: clamp(1.3rem, 5vw, 2.3rem);
     margin-bottom: 1rem;
     line-height: 1.5;
     font-weight: 500;
-    max-width: 83rem;
 }
 
+section.where > .ctnr {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap:clamp(2rem, 11vw, 10rem);
+}
 
+section.where .content {
+    width:var(--width);
+    max-width: 47rem;
+    padding: clamp(4rem, 12vw, 7rem) 0 0;
+}
 
-
+section.where .map {
+    width: 100%;
+    height: 40rem;
+}
 
 
 
@@ -697,12 +846,11 @@ section.testimonials {
     align-items: center;
     background-color: var(--c2-a);
     background-image: linear-gradient(90deg, #fff1, transparent 15%, transparent 85%, #fff1);
-    overflow: hidden;
 }
 
 .testimonials h2 {
     font-size: clamp(2rem, 9vw, 4.5rem);
-    color: var(--c1);
+    color: var(--primary);
     font-weight: 600;
     text-align: center;
     margin-bottom: 0.5rem;
@@ -796,12 +944,23 @@ section.testimonials {
 .profile .photo {
     width: clamp(7rem, 25vw, 17rem);
     height: clamp(7rem, 25vw, 17rem);
-    object-fit: cover;
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     z-index: 1;
     background-color: var(--c2);
     box-shadow: 0.7rem 0.7rem 1.5rem #0002, -0.7rem -0.7rem 1.5rem #fff2;
     /* border: 0.2rem solid var(--c2); */
+}
+
+.profile .photo.p1 {
+    /* background-image: url(/testimonials/violando.jpg);
+    background-image: -webkit-image-set(url(/testimonials/violando.jpg) 1x, url(/testimonials/violando.webp) 1x); */
+}
+
+.profile .photo.p2 {
+    /* background-image: url(/testimonials/andrei.jpg);
+    background-image: -webkit-image-set(url(/testimonials/andrei.jpg) 1x, url(/testimonials/andrei.webp) 1x); */
 }
 
 .profile .name {
@@ -830,7 +989,7 @@ section.testimonials {
 
 .profile hr {
     border: none;
-    border-top: 0.3rem solid var(--c1);
+    border-top: 0.3rem solid var(--primary);
     position: absolute;
     left: 4rem;
     right: 0;
@@ -881,208 +1040,14 @@ section.testimonials {
 
 
 
-
-
-
-
-
-section.contact {
-    display: flex;
-    background-color: var(--c1);
-    padding: 0 0 clamp(6rem, 10vw, 9rem);
-    flex-direction: column;
-    align-items: center;
-    scroll-margin: var(--header-height);
-}
-
-.contact .width {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.contact .ctnr {
-    /* width: clamp(10rem, 85vw, 90rem); */
-    background-color: var(--light);
-    border-radius: 3rem;
-    padding: 4rem clamp(0.8rem, 5vw, 4rem) 3rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    box-shadow: 0 2.2rem 1.3rem -1.2rem rgb(191 163 0 / 50%);
-}
-
-.contact .ctnr::before {
-    content: '';
-    position: absolute;
-    width: 14rem;
-    height: 0.9rem;
-    background-color: var(--c2-b);
-    top: -0.45rem;
-    left: 0;
-    right: 0;
-    margin-inline: auto;
-    border-radius: 2rem;
-}
-
-.contact h2 {
-    text-align: center;
-    font-size: clamp(2rem, 9vw, 4rem);
-    color: var(--c2-b);
-    font-weight: 700;
-}
-
-.contact .email_us {
-    text-align: center;
-    font-size: clamp(1rem, 3.5vw, 1.4rem);
-    font-weight: 500;
-    color: var(--c2-d);
-    line-height: 1.8;
-}
-
-.contact .email_us a {
-    color: var(--c2);
-    font-weight: 600;
-    background-color: var(--light-a);
-    padding: 0.3rem 0;
-    white-space: nowrap;
-}
-
-
-
-.contact .vishyvka {
-    margin-bottom: clamp(6rem, 10vw, 7rem);
-    position: sticky;
-    top: var(--header-height);
-    z-index: 1;
-}
-
-.contact h2+.txt {
-    font-weight: 500;
-    max-width: 40rem;
-}
-
-.contact h2+.txt b,
-.contact h2+.txt strong {
-    font-weight: 600;
-}
-
-.contact form .obs {
-    line-height: 1.5;
-    color: var(--c2);
-    font-weight: 600;
-    font-size: 0.9em;
-    text-align: center;
-    max-width: 53rem;
-    margin: 2rem auto 0;
-    width: 93%;
-}
-
-.contact form>.flex {
-    display: flex;
-    flex-direction: column;
-    width: clamp(10rem, 85vw, 30rem);
-    gap: 2rem;
-    width: 100%;
-}
-
-.contact form .content {
-    display: flex;
-    gap: clamp(2rem, 6vw, 3rem);
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: flex-start;
-    flex-flow: column;
-    align-items: center;
-}
-
-.contact form fieldset {
-    border: 0.1rem solid #dae6f1;
-    border-radius: 1rem;
-    padding: 2rem 1.6rem 2.5rem;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 1.5rem 3.5rem;
-    box-sizing: border-box;
-    justify-content: center;
-}
-
-.fieldset_controls {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.fieldset_controls .next.disabled,
-.fieldset_controls .back.disabled {
-    background-color: var(--light-a);
-    color: var(--c2-e);
-    cursor: default;
-}
-
-.fieldset_controls .next,
-.fieldset_controls .back {
-    padding: 1rem 2rem;
-    background-color: var(--c2-b);
-    color: var(--light);
-    border-radius: 0.6rem;
-    font-size: 1.6rem;
-    cursor: pointer;
-}
-
-.contact form fieldset:not(.visible) {
-    display: none;
-}
-
-.contact form fieldset>div {
-    min-width: clamp(10rem, 70vw, 37rem);
-    width: clamp(10rem, 70vw, 37rem);
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    flex: 1;
-}
-
-.contact form fieldset p {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.contact form fieldset legend {
-    padding: 0 1rem;
-    color: var(--c2);
-    font-weight: 500;
-}
-
-.contact form .content>div {
-    /* flex: 1; */
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* gap: 1.5rem; */
-}
-
-
-/* .contact form .form_step {
-
-} .contact form .form_step:not(.current) {
-    display: none;
-} */
-
-
-
 @media (min-width:800px) {
 
     section.intro {
-        padding-bottom: 2rem;
+        /* padding-bottom: 2rem; */
     }
 
     h1 {
-        font-size: clamp(3.2rem, calc(4vw - 1.7rem), 4.6rem);
+        line-height: 1.1;
     }
 
     .intro video,
@@ -1092,24 +1057,25 @@ section.contact {
         /* min-height: 65vh; */
     }
 
-    section.services {
-        padding-top: clamp(11rem, 14vw, 24rem);
+    section.top_distance {
+        padding-top: clamp(14rem, 65vw, 19rem);
     }
 
     .services .ctnr {
         max-width: 120rem;
-        gap: clamp(1rem, 2vw, 3.5rem);
+        gap: clamp(1rem, 4vw, 3.5rem);
+        width: var(--width);
     }
 
     .services .box {
         transition: transform 0.7s 0.1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.7s 0.1s cubic-bezier(0.4, 0, 0.2, 1);
-        background-color: rgb(230 243 255 / 91%);
-        backdrop-filter: blur(0.4rem);
+        /* background-color: rgb(230 243 255 / 91%);
+        backdrop-filter: blur(0.4rem); */
     }
 
     .services .box a {
         background-color: var(--light);
-        color: var(--c2-c);
+        color: var(--c2);
         transition: color 0.7s ease, background-color 0.7s ease;
     }
 
@@ -1121,7 +1087,7 @@ section.contact {
 
     .services .box:hover a {
         transition: color 0.3s ease, background-color 0.3s ease, filter 0.3s ease;
-        color: var(--c1);
+        color: var(--light);
         background-color: var(--c2-b)
     }
 
@@ -1180,17 +1146,6 @@ section.contact {
 
 @media (min-width: 1080px) {
 
-    .strip .jobs {
-        font-size: clamp(1rem, 0.8vw, 1.4rem);
-        position: absolute;
-        right: 1vw;
-        font-weight: 400;
-        line-height: 1.4;
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
     .offer_sticker {
         border-radius: 0 0 0 0.8rem;
     }
@@ -1202,6 +1157,17 @@ section.contact {
 
     .services .box {
         min-width: unset;
-        max-width: 34rem;
+        flex: 1;
+    }
+
+    section.where > .ctnr {
+        width: calc(var(--width) + ((100% - var(--width)) / 2));
+        margin-inline: auto 0;
+        justify-content: space-between;
+    }
+
+    section.where .map {
+        flex: 1;
+        min-width: 40vw;
     }
 }

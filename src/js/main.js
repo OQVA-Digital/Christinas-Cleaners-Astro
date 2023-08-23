@@ -63,15 +63,6 @@ window.addEventListener("scroll", function(e){
   }
 
 });
-  
-if(scroll > 100) {
-  foldBt.classList.add('hide')
-  showingFoldBt = false;
-} else {
-  foldBt.classList.remove('hide')
-  showingFoldBt = true;
-}
-
 
 
 
