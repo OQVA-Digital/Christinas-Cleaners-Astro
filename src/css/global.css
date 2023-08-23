@@ -245,7 +245,12 @@ form button[type='submit'] {
 form button[type='submit'].disabled {
     background-color: var(--c2-e);
     font-weight: 500;
-    pointer-events: none;
+    border: 0.1rem solid var(--c2-e);
+}
+
+form button[type='submit'].disabled:hover {
+    background-color: var(--light);
+    border: 0.1rem solid var(--c2-e);
 }
 
 body form button[type='submit'].submited {
