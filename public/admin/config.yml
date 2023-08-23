@@ -16,7 +16,6 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Prompt", name: "prompt", widget: "text"}
       - {label: "Publish Date", name: "pubDate", widget: "datetime", format: "MMM DD YYYY"}
       - {label: "Hero Image", name: "heroImage", widget: "image", time_format: false}
       - {label: "Body", name: "body", widget: "markdown"}
