@@ -114,32 +114,3 @@ b, strong {
 mark {
     background-color: var(--c2-c);
 }
-
-.prompt p::before, .prompt p::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: calc(clamp(2rem, 5vw, 4rem) * -2 + 0.1px);
-    width: calc(clamp(2rem, 5vw, 4rem) * 2);
-    height: calc(clamp(2rem, 5vw, 4rem) * 2);
-    z-index: -1;
-}
-
-.prompt p::before {
-    background-color: var(--c2);
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    transform-origin: top right;
-}
-
-.prompt p::after {
-    background-color: var(--light);
-    border-radius: clamp(2rem, 5vw, 4rem);
-    -webkit-border-radius: clamp(2rem, 5vw, 4rem);
-    -moz-border-radius: clamp(2rem, 5vw, 4rem);
-    -ms-border-radius: clamp(2rem, 5vw, 4rem);
-    -o-border-radius: clamp(2rem, 5vw, 4rem);
-}

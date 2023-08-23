@@ -1,7 +1,6 @@
 ---
 title: London's Old Buildings Ipsum Dolor Sit Amet
 description: ""
-prompt: "London is full of old buildings, some of them beautiful, some of them could do with a clean! So let's write a blog about how good it feels to have a beautifully clean carpet in your old London office. These guys are usually accountants, investment offices, and lawyers!"
 pubDate: 'Jul 22 2022'
 heroImage: /images/media/pexels-photo-7192875.jpeg
 ---

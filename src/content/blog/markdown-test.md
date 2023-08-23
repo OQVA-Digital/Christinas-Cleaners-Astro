@@ -1,10 +1,6 @@
 ---
 title: MarkDown Test
 description: Test description
-prompt: Prompt prompt prompt prompt prompt prompt prompt prompt prompt prompt
-  prompt prompt prompt prompt prompt prompt prompt prompt prompt prompt prompt
-  prompt prompt prompt prompt prompt prompt prompt prompt prompt prompt prompt
-  prompt prompt prompt prompt prompt prompt prompt prompt prompt
 pubDate: Aug 18 2023
 heroImage: /images/media/pexels-photo-4098369.webp
 ---

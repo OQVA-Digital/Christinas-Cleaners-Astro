@@ -1,7 +1,6 @@
 ---
 title: 'Third post'
 description: 'Lorem ipsum dolor sit amet'
-prompt: "London is full of old buildings, some of them beautiful, some of them could do with a clean! So let's write a blog about how good it feels to have a beautifully clean carpet in your old London office. These guys are usually accountants, investment offices, and lawyers!"
 pubDate: 'Jul 15 2022'
 heroImage: '/placeholder-hero.jpg'
 ---
