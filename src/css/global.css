@@ -257,11 +257,30 @@ form button[type='submit'].disabled {
     background-color: var(--c2-e);
     font-weight: 500;
     border: 0.1rem solid var(--c2-e);
+    cursor: default;
+    position: relative;
+}
+
+form button[type='submit'].disabled::before {
+    content: 'Please fill the form before submitting.';
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    color: var(--c2-a);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form button[type='submit'].disabled:hover:before {
+    opacity: 1;
 }
 
 form button[type='submit'].disabled:hover {
     background-color: var(--light);
     border: 0.1rem solid var(--c2-e);
+    cursor: default;
 }
 
 body form button[type='submit'].submited {
