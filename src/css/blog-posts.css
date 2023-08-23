@@ -49,6 +49,7 @@ main section {
     border-radius: 0.4rem;
     background-color: var(--c1);
     min-height: 13rem;
+    max-height: 30rem;
 }
 
 .posts .content {
