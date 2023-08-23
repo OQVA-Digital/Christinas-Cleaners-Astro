@@ -1,0 +1,561 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import '../css/home.css'
+
+import { getCollection } from "astro:content";
+const testimonials = (await getCollection('testimonials')).sort((a, b) => {
+    // Check if both items have an 'order' property
+    if (a.data.order !== undefined && b.data.order !== undefined) {
+        return a.data.order - b.data.order; // Sort by 'order' if both have it
+    } else if (a.data.order !== undefined) {
+        return -1; // 'a' has 'order', but 'b' doesn't, so 'a' comes first
+    } else if (b.data.order !== undefined) {
+        return 1; // 'b' has 'order', but 'a' doesn't, so 'b' comes first
+    } else {
+        // Both 'a' and 'b' don't have 'order', fallback to sorting by 'title'
+        return a.data.name.localeCompare(b.data.name);
+    }
+});
+
+---
+
+<Layout title="Christina's Cleaners · Empowering Ukrainian Refugees">
+
+	<script>
+		import "../js/main.js"
+		import "../js/menu.js"
+		import "../js/form.js"
+		// import "../js/lazyload.js"
+        import "../css/tiny-slider.css"
+	</script>
+
+	<main>
+        <section class="intro">
+            <div class="width">
+                <div class="ctnr">
+                    <div class="content">
+                        <h1>Experience exceptional <strong>cleaning services</strong> while making a <strong>meaningful impact</strong>.</h1>
+    
+                        <h2>Welcome to Christina's Cleaners, your top choice for professional and reliable cleaning services in <strong>Oxfordshire</strong>. We're not just committed to providing the highest quality domestic cleaning – we're also dedicated to making a difference. By choosing us, you're choosing to support the social and economic integration of Ukrainian female refugees into the UK. <strong>Discover our services and the positive impact we're making today.</strong></h2>
+    
+                        <div class="cta_ctnr">
+                            <a class="cta" href="#get-a-quote" aria-label="Get a quote">Get a Quote</a>
+                            <a href="#about-us" aria-label="Go to About Us">About us</a>
+                        </div>
+                    </div>
+                    
+                    <div class="vid_ctnr">
+                        <video src="/video/christina.mp4" playsinline loop disablepictureinpicture poster="/video/christina-poster.jpg"></video>
+
+                        <button class="play_state" type="button" aria-label="play or pause video button"></button>
+                        <button class="sound_state" type="button" aria-label="toggle sound button"></button>
+                    </div>
+
+                    <script>
+                        const introVid = document.querySelector('.intro video')
+                        const videoStateButton = document.querySelector('.vid_ctnr .play_state')
+                        const soundStateButton = document.querySelector('.vid_ctnr .sound_state')
+                        // let isPlaying = false;
+
+                        introVid.addEventListener('click', togglePlayState)
+                        videoStateButton.addEventListener('click', togglePlayState)
+
+                        function togglePlayState() {
+                            if(introVid.paused) {
+                                introVid.play()
+
+                                videoStateButton.style.backgroundImage = 'url("/icons/play.svg")';
+
+                                videoStateButton.style.animation = 'unset'
+                                setTimeout(() => {
+                                videoStateButton.style.animation = 'fade_bt 0.6s forwards'
+                                }, 200);
+
+                            } else {
+                                introVid.pause()
+
+                                videoStateButton.style.backgroundImage = 'url("/icons/pause.svg")';
+
+                                videoStateButton.style.animation = 'unset'
+
+                                setTimeout(() => {
+                                videoStateButton.style.animation = 'fade_bt 0.6s forwards'
+                                }, 200);
+                            }
+                        }
+
+                        soundStateButton.addEventListener('click', function() {
+                            if(introVid.muted == false) {
+                                introVid.muted = true;
+
+                                soundStateButton.style.backgroundImage = 'url("/icons/sound-off.svg")';
+                            } else if(introVid.muted == true) {
+                                console.log('dandkasmsd')
+                                introVid.muted = false;
+
+                                soundStateButton.style.backgroundImage = 'url("/icons/sound-on.svg")';
+                            }
+                        })
+                    </script>
+                </div>
+            </div>
+
+            <div class="bottom_wave"></div>
+
+            <a href="#services" class="fold_bt" aria-label="Go down button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="m208.49 152.49l-72 72a12 12 0 0 1-17 0l-72-72a12 12 0 0 1 17-17L116 187V40a12 12 0 0 1 24 0v147l51.51-51.52a12 12 0 0 1 17 17Z"/></svg>
+            </a>
+        </section>
+
+        <section class="services" id="services">
+            <div class="width">
+                <h2>Our services</h2>
+
+                <div class="txt">
+                    <p>At Christina's Cleaners, we understand that every home is unique and has different cleaning needs. That's why we offer tailored domestic cleaning services to suit your schedule and requirements. Whether you're looking for regular weekly cleaning, need an <strong>emergency clean</strong> on the same day, or require a comprehensive <strong>end-of-tenancy clean</strong>, our highly-skilled, dedicated team is ready to deliver exceptional results.</p>
+
+                    <!-- <p><strong>All our services are carried out with utmost professionalism, attention to detail, and a commitment to customer satisfaction.</strong></p> -->
+                </div>
+
+                <div class="ctnr">
+                    <div class="box highlight">
+                        <div class="content">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.85 26.94" fill="currentcolor"><defs><style>.cls-1{fill-rule:evenodd;}</style></defs><path class="cls-1" d="m8.04,14.44L.89.98c-.17-.33-.05-.73.28-.9s.73-.05.9.28l7.16,13.46,1.01-.54c1.3-.69,2.92-.2,3.61,1.1,0,0,0,0,0,0l.43.81,4.58,6.7-5.83,3.1-2.02-3.99-1.19.6,2.03,4.01-2.5,1.33-3-7.55-.43-.81c-.69-1.3-.2-2.92,1.1-3.61,0,0,0,0,0,0l1.01-.54h0Zm2.82.01l-3.21,1.7c-.65.35-.9,1.15-.55,1.8,0,0,0,0,0,0l.43.81,5.56-2.96-.43-.81c-.35-.65-1.15-.9-1.8-.55,0,0,0,0,0,0Z"/><path d="m5.18,20.94c-.24-.28-.66-.32-.94-.09h0,0s-.04.04-.04.04c-.06.04-.12.09-.18.13-.17.11-.41.26-.73.41-.82.39-1.71.6-2.61.6-.37,0-.67.3-.67.67s.3.67.67.67c1.1,0,2.19-.25,3.19-.73.31-.15.61-.32.9-.51.11-.07.21-.15.31-.23l.02-.02h0s0,0,0,0h0c.28-.24.32-.66.09-.94Zm1.38,3.39c.2.31.12.72-.18.92,0,0,0,0,0,0h0s0,0,0,0h0s-.02.02-.02.02c-.12.07-.23.14-.35.21-.23.13-.57.31-.97.49-.79.35-1.89.72-3.02.72-.37,0-.67-.3-.67-.67s.3-.67.67-.67c.87,0,1.77-.29,2.48-.61.37-.17.73-.35,1.08-.57.02-.01.04-.02.06-.04h.01s0,0,0,0c.31-.2.72-.12.92.18,0,0,0,0,0,0Z"/></svg>
+                                Standard Cleaning
+                            </h3>
+
+                            <p>Keeping your home clean on a regular basis can be challenging amidst the hustle and bustle of daily life. <b>That's where we step in.</b> Christina's Cleaners offers a comprehensive <b>Standard Cleaning service, covering all the basics and maintaining cleanliness and hygiene in your home.</b></p>
+
+                            <span class="price">
+                                <span class="flex discount">
+                                    <span>10% OFF</span>
+                                    <del>£20</del>
+                                </span>
+                                <span class="flex final_price">
+                                    £18 <sub>per<br>hour</sub>
+                                </span>
+                            </span>
+                            
+                            <div tabindex="0" class="tooltip">
+                                <button type="button" aria-label="tooltip"></button>
+    
+                                <p>Our Standard Cleaning service includes <b>dusting, vacuuming, mopping, kitchen cleaning, bathroom cleaning, and general tidying</b>. We focus on high-traffic areas, ensuring they're always inviting and fresh. This service is perfect for those looking for a <b>regular cleaning schedule</b>, so you can focus on what matters most to you, while we take care of the tidying up.</p>
+                            </div>
+                        </div>
+
+                        <a class="cta" href="#get-a-quote" aria-label="Get 10% OFF!">Get 10% OFF!</a>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="content">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.67 17.33" fill="currentcolor"><polygon points="12.33 0 10.89 5.13 8 6.64 10.89 8.14 12.33 12.67 13.78 8.14 16.67 6.63 13.78 5.13 12.33 0"/><polygon points="2.67 4 2 6.67 0 7.33 2 8 2.67 10.67 3.33 8 5.33 7.33 3.33 6.67 2.67 4"/><polygon points="6.87 10.67 6.2 13.33 4.2 14 6.2 14.67 6.87 17.33 7.54 14.67 9.54 14 7.54 13.33 6.87 10.67"/></svg>
+                                Deep Cleaning
+                            </h3>
+
+                            <p>Every once in a while, your home needs a little extra attention. <b>Our Deep Cleaning service is perfect for those moments.</b> We dig a little deeper, reaching those often-neglected areas to ensure your home is spotless from top to bottom.</p>
+                        
+                            <div tabindex="0" class="tooltip">
+                                <button type="button" aria-label="tooltip"></button>
+
+                                <p>In addition to the services offered in our Standard Cleaning, our Deep Cleaning includes the <b>cleaning of oven interiors, inside windows, under furniture, detailed dusting and more.</b> Whether you're preparing for a special event, recovering from home renovations, or it's just that time of the year, our <strong>Deep Cleaning service</strong> will refresh your living space and give it a new lease of life.</p>
+                            </div>
+                        </div>
+
+                        <a class="cta" href="#get-a-quote" aria-label="Get a quote">Get a Quote</a>
+                    </div>
+                    
+                    <div class="box">
+                        <div class="content">
+                            <h3><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentcolor"><polygon points="25.33 0 23.41 6.84 19.56 8.85 23.41 10.86 25.33 16.89 27.26 10.86 31.11 8.85 27.26 6.84 25.33 0"/><polygon points="12.44 5.33 11.56 8.89 8.89 9.78 11.56 10.67 12.44 14.22 13.33 10.67 16 9.78 13.33 8.89 12.44 5.33"/><path d="m0,21.33c0-.49.4-.89.89-.89h2.67c.49,0,.89.4.89.89v9.77c0,.49-.4.89-.89.89H.89c-.49,0-.89-.4-.89-.89v-9.77h0Z"/><path d="m10.4,20.61c.83-.38,2.85,0,2.85,0l5.89,1.32s1.47.47,2.85.47.55,1.89-.37,2.55c-.92.66-1.59.62-1.59.62l-4.76-.06s4.14.76,5.71.85c.79.05,2.15-.51,3.67-1.13,1.48-.61,3.11-1.28,4.52-1.51,2.85-.47,3.31,2.08,2.39,3.02-.92.94-8.28,4.53-9.57,5-1.01.37-2.23.25-3.61.11-.38-.04-.78-.08-1.18-.11-1.61-.12-2.84-.51-4.05-.9-1.3-.41-2.59-.82-4.32-.89-.58-.02-1.94.05-2.62.09v-7.88c1.18-.42,3.57-1.28,4.18-1.56h0Z"/></svg>
+                                End of Tenancy Cleaning
+                            </h3>
+
+                            <p>Moving homes can be stressful, and leaving your previous residence in perfect condition is a responsibility we understand. That's why Christina's Cleaners offers a thorough <b><strong>End of Tenancy Cleaning service</strong> designed to meet the standards of landlords and rental agencies.</b></p>
+                            
+                            <div tabindex="0" class="tooltip">
+                                <button type="button" aria-label="tooltip"></button>
+
+                                <p>Our service includes a comprehensive clean of your property, ensuring every room, appliance, and surface is left immaculate and ready for the next tenant. <b>From kitchen appliances to bathroom fixtures, carpets to windows</b>, we'll ensure everything is sparkling clean, helping you secure your deposit and leaving a good impression.</p>
+                            </div>
+                        </div>
+
+                        <a class="cta" href="#get-a-quote" aria-label="Get a quote">Get a Quote</a>
+                    </div>
+                    
+                    <!-- <div class="box">
+                        <div class="content">
+                            <h3>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M12 7V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2h-8zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm9 12h-7v-2h2v-2h-2v-2h2v-2h-2V9h7c.55 0 1 .45 1 1v8c0 .55-.45 1-1 1zm-1-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                                Commercial Cleaning</h3>
+
+                            <p>Customised commercial cleaning solutions tailored to <b>your business needs</b>, all while making a positive social impact by partnering with Christina's Cleaners.</p>
+                        </div>
+
+                        <a class="cta" href="#">Get in touch</a>
+                    </div> -->
+                </div>
+            </div>
+
+            <div class="splash1"></div>
+            <div class="splash2"></div>
+        </section>
+
+        <section class="about" id="about-us">
+            <video class="lazy" poster="/video/gloves-cleaning-poster.jpg" autoplay playsinline muted loop>
+                <source data-src="/video/gloves-cleaning.mp4" type="video/mp4">
+            </video>
+
+            <script>
+                // Define a reusable lazy loading function
+                function lazyLoad(element) {
+                    if (element.tagName === "VIDEO") {
+                        for (var source in element.children) {
+                            var videoSource = element.children[source];
+                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                videoSource.src = videoSource.dataset.src;
+                            }
+                        }
+                        element.load();
+                    } else if (element.tagName === "IMG") {
+                        console.log(element)
+                        element.src = element.dataset.src;
+                    }
+                    element.classList.remove("lazy");
+                    observer.unobserve(element);
+                }
+            
+                // Get all elements with the "lazy" class (videos and images)
+                var lazyElements = [].slice.call(document.querySelectorAll(".lazy"));
+            
+                // Create an Intersection Observer
+                var observer = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            lazyLoad(entry.target);
+                        }
+                    });
+                });
+            
+                // Observe all lazy elements
+                lazyElements.forEach(function(element) {
+                    observer.observe(element);
+                });
+            
+            </script>
+            
+            <div class="width">
+                <div class="ctnr">
+                    <h2>About <strong>Christina's Cleaners</strong></h2>
+
+                    <p><strong>Christina's Cleaners is a unique fusion of top-tier professional cleaning services and social responsibility.</strong> Based in <strong>Oxfordshire</strong>, we are driven by our mission to empower Ukrainian female refugees to rebuild their lives while delivering exceptional cleaning services to our clients.</p>
+
+                    <p>Our journey began with a vision - to provide reliable, high-quality domestic cleaning services and make a positive social impact. <strong>Our team comprises resilient, dedicated, and highly-skilled women from Ukraine</strong>, who not only work hard to meet your cleaning needs but are also overcoming adversity and building a better future for themselves in the UK.</p>
+
+                    <p><strong>Located in Oxfordshire</strong>, we serve various areas including Headington, Cowley, Marston, Botley, and beyond, delivering consistent, high-quality cleaning services while making a difference.</p>
+
+                    <div class="cta_ctnr">
+                        <a href="#get-a-quote" class="cta" aria-label="Get a quote">Get a quote</a>
+
+                        <a href="tel:447425078684" aria-label="Call us at +44 742 507 8684">+44 742 507 8684</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social_impact" id="social-impact">
+                <div class="width">
+                    <h2>Our Social Impact</h2>
+    
+                    <p>Choosing Christina's Cleaners means more than just hiring a cleaning service - it means contributing to a cause. <b>We're deeply committed to empowering Ukrainian female refugees</b>, providing them with employment opportunities and a chance to rebuild their lives in the UK.</p>
+    
+                    <p><b>We believe in the power of work for changing lives.</b> Our team members develop professional skills, gain economic independence, and integrate into the community, all while providing exceptional cleaning services to our clients.</p>
+    
+                    <p><strong>Join us in making a difference in the lives of these strong, resilient women and experience exceptional cleaning services tailored to your needs.</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials" id="testimonials">
+
+            <div class="width">
+                <div class="ctnr">
+                    <h2>Testimonials</h2>
+
+                    <div class="txt">
+                        <p>At Christina's Cleaners, we believe our work speaks for itself, but we understand the value of hearing it from those who have experienced our services first-hand. <strong>Here are some testimonials from our satisfied clients in Oxfordshire.</strong></p>
+                    </div>
+                    
+                    <script is:inline src="/js/tiny-slider.js"></script>
+                
+                    <script>
+                        var slider = tns({
+                            container: '.testimonials .slider',
+                            center: true,
+                            items: 1,
+                            slideBy: 'page',
+                            speed: 500,
+                            mouseDrag: true,
+                            autoWidth:true,
+                            controls:false,
+                            navPosition:'bottom',
+                            navAsThumbnails:true
+                        });
+                    </script>
+                    
+                    <div class="slider">
+                        {
+                            testimonials.map((testimonials) => (
+                                <div class="box">
+                                    <div class="flex">
+                                        <div class="profile">
+											<img class="photo" src={testimonials.data.avatar} alt={`${testimonials.data.name}'s avatar'`}/>
+
+                                            <div>
+                                                <span class="name">{testimonials.data.name}</span>
+                                                
+                                                {testimonials.data.location ? (<span class="location">{testimonials.data.location}</span>) : ""}
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+
+                                        <blockquote>
+												<p set:html={testimonials.data.paragraph01}></p>
+												
+												{testimonials.data.paragraph02 == "" ? null : (<p set:html={testimonials.data.paragraph02}></p>)}
+												
+												{testimonials.data.paragraph03 == "" ? null : (<p set:html={testimonials.data.paragraph03}></p>)}
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact" id="get-a-quote">
+            <div class="vishyvka"></div>
+
+            <div class="width">
+                <div class="ctnr">
+
+                    <form name="quote-submission" method="POST" data-netlify="true">
+                        <h2 id="quote-heading">Get a Quote</h2>
+                    
+                        <div class="txt"><strong>Christina's Cleaners operates across Oxford and its surrounding villages</strong>, including Headington, Cowley, Marston, Botley, and many more.</div>
+                    
+                        <div class="content">
+                            <fieldset>
+                                <legend>About You</legend>
+
+                                <div>
+                                    <p>
+                                        <label for="name">Your Name:
+                                            <input type="text" id="name" name="name" required autocomplete="name" aria-required="true">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="surname">Surname:
+                                            <input type="text" id="surname" name="surname" required autocomplete="family-name" aria-required="true">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="email">Email:
+                                            <input type="email" id="email" name="email" required autocomplete="email" aria-required="true">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="phone">Contact Number:
+                                            <input type="tel" id="phone" name="phone" required autocomplete="tel" aria-required="true">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="contactPreference">Preferred method of contact:
+                                            <select id="contactPreference" name="contactPreference" required aria-required="true">
+                                                <option disabled selected value="">--- Select ---</option>
+                                                <option value="Email">Email</option>
+                                                <option value="Phone">Phone</option>
+                                            </select>
+                                        </label>
+                                    </p>
+                                </div>
+                            </fieldset>
+
+
+
+
+                            <fieldset>
+                                <legend>About the Property</legend>
+
+                                <div>
+                                    <p>
+                                        <label for="streetAddress">Street Address:
+                                            <input type="text" id="streetAddress" name="streetAddress" autocomplete="street-address">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="postcode">Postcode:
+                                            <input type="text" id="postcode" name="postcode" autocomplete="postal-code">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="city">City:
+                                            <input type="text" id="city" name="city" autocomplete="address-level2">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="specialInstruction">Are there any special instructions for finding your property?
+                                            <textarea id="specialInstruction" name="specialInstruction" aria-describedby="specialInstructionDesc"></textarea>
+                                        </label>
+                                        <span id="specialInstructionDesc" class="visually-hidden">Please provide any additional information that can help locate your property.</span>
+                                    </p>
+                                </div>
+                            </fieldset>
+
+
+
+
+                            <fieldset>
+                                <legend>About the Cleaning</legend>
+
+                                <div>
+                                    <p>
+                                        <label for="cleaningService">Type of Cleaning Service required:
+                                            <select id="cleaningService" name="cleaningService">
+                                                <option disabled selected value="">--- Select ---</option>
+                                                <option value="Regular Domestic Cleaning">Basic Clean</option>
+                                                <option value="Subscription-based Regular Cleaning">Deep Clean</option>
+                                                <option value="Specialised Cleaning Services">End of Tenancy Clean</option>
+                                            </select>
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="bedrooms">Number of Bedrooms:
+                                            <input type="number" id="bedrooms" name="bedrooms" autocomplete="off">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="bathrooms">Number of Bathrooms:
+                                            <input type="number" id="bathrooms" name="bathrooms" autocomplete="off">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="otherRooms">Other rooms requiring cleaning (Please specify):
+                                            <textarea id="otherRooms" name="otherRooms"></textarea>
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="extraAttention">Are there any specific areas needing extra attention or services required beyond the standard cleaning package?
+                                            <textarea id="extraAttention" name="extraAttention"></textarea>
+                                        </label>
+                                    </p>
+                                    
+                                </div>
+                
+                                <div>
+
+                                    <p>
+                                        <label for="cleaningDate">Preferred Start Date:
+                                            <input type="date" id="cleaningDate" name="cleaningDate" min="2023-06-02">
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="cleaningTime">Preferred Start Time:
+                                            <input type="time" id="cleaningTime" name="cleaningTime" min="08:00" max="20:00" autocomplete="off">
+                                            <sub>From 08:00 to 20:00</sub>
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="frequency">Frequency of Cleaning:
+                                            <select id="frequency" name="frequency">
+                                                <option disabled selected value="">--- Select ---</option>
+                                                <option value="One-time">One-time</option>
+                                                <option value="Weekly">Weekly</option>
+                                                <option value="Bi-weekly">Bi-weekly</option>
+                                                <option value="Monthly">Monthly</option>
+                                            </select>
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="instructions">Are there any specific cleaning instructions or special requests?
+                                            <textarea id="instructions" name="instructions"></textarea>
+                                        </label>
+                                    </p>
+                    
+                                    <p>
+                                        <label for="pets">Are there any pets in the house? If yes, please specify.
+                                            <textarea id="pets" name="pets"></textarea>
+                                        </label>
+                                    </p>
+                                    
+                                </div>
+                            </fieldset>
+
+
+
+
+                            <fieldset>
+                                <legend>Payment</legend>
+                
+                                <div>
+                                    <p>
+                                        <label for="payment">Preferred Method of Payment:
+                                            <select id="payment" name="payment">
+                                                <option disabled selected value="">--- Select ---</option>
+                                                <option value="Credit Card">Credit Card</option>
+                                                <option value="Debit Card">Debit Card</option>
+                                                <option value="Bank Transfer">Bank Transfer</option>
+                                                <option value="Cash">Cash</option>
+                                            </select>
+                                        </label>
+                                    </p>
+                                </div>
+                            </fieldset>
+
+                            <div class="fieldset_controls">
+                                <button type="button" class="back disabled" aria-label="Previous fieldset button">Back</button>
+    
+                                <button type="button" class="next" aria-label="Next fieldset button">Next</button>
+                            </div>
+                        </div>
+                        <p>
+                            <button class="cta disabled" type="submit" name="submit">Get a Quote!</button>
+                
+                            <p class="obs">Please note that your booking is <b>subject to confirmation</b>. We will contact you shortly to confirm the details of your booking and provide you with a quote.</p>
+                        </p>
+                    </form>
+
+                    <script>
+                        import '../js/quote-form.js'
+                    </script>
+                    
+                    
+                    <p class="email_us">Need more details? Drop us an email at <a href="mailto:info@christinas-cleaners.co.uk" aria-label="E-mail us to info@christinas-cleaners.co.uk">info@christinas-cleaners.co.uk</a>.</p>
+                </div>
+            </div>
+        </section>
+	</main>
+</Layout>
+
+<style>
+	
+</style>

@@ -1,0 +1,116 @@
+:root {
+    --base-heading-size: clamp(2.6rem, 8vw, 5rem);
+    --profile-photo-dimensions: clamp(4rem, 13vw, 7rem);
+}
+
+main article {
+    margin-inline: auto;
+    margin-bottom: clamp(4rem, 9vw, 10rem);
+    width: clamp(24rem, 84vw, 75rem);
+    font-size: 1.7rem;
+    line-height: 1.5;
+}
+
+main article p {
+    margin-top: 1.5rem;
+}
+
+main > .ctnr {
+    width: clamp(24rem, 84vw, 75rem);
+    margin-inline: auto;
+    position: absolute;
+    left:0;
+    right:0;
+    top: 2rem;
+}
+
+img.hero {
+    display: block;
+    width: 100%;
+    height: clamp(5rem, 50vw, 28rem);
+    object-fit: cover;
+    object-position: bottom center;
+    background-color: var(--c1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark);
+    line-height: 1.2;
+}
+
+article h2, article h3, article h4, article h5, article h6 {
+    font-weight: 650;
+    margin-block: 3rem 1rem;
+}
+
+h1 {
+    font-size: var(--base-heading-size);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: calc(var(--base-heading-size) * 0.7);
+}
+
+h3 {
+    font-size: calc(var(--base-heading-size) * 0.6);
+}
+
+h4 {
+    font-size: calc(var(--base-heading-size) * 0.5);
+}
+
+h5 {
+    font-size: calc(var(--base-heading-size) * 0.4);
+}
+
+h6 {
+    font-size: calc(var(--base-heading-size) * 0.3);
+}
+time + hr {
+    margin-bottom: 1rem;
+}
+
+article .messages > p, article blockquote, article ul, article ol {
+    margin-bottom: clamp(1.2rem, 4vw, 1.8rem);
+    line-height: 1.5;
+    font-weight: 380;
+    padding: clamp(1.1rem, 3vw, 1.8rem) clamp(1.5rem, 4vw, 2.4rem);
+    border-radius: 1rem;
+    border: 0.2rem solid var(--light-b);
+    color: #4f5b55;
+    margin-inline: unset;
+}
+
+article .messages > p {
+    position: relative;
+}
+
+article .messages > p::before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 2rem;
+    border-top: 0.7rem solid var(--light-b);
+    border-right: 0.7rem solid var(--light-b);
+    border-bottom: 0.7rem solid transparent;
+    border-left: 0.7rem solid transparent;
+}
+
+article ul, article ol {
+    padding-left: 4rem;
+}
+
+blockquote {
+    line-height: 1.5;
+    font-style: italic;
+}
+
+b, strong {
+    font-weight: 500;
+    color: var(--dark-a);
+}
+
+mark {
+    background-color: var(--c2-c);
+}

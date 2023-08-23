@@ -1,0 +1,111 @@
+main {
+    padding-block: clamp(2rem, 5vw, 5rem);
+}
+
+main section {
+    width: var(--width);
+    margin-inline: auto;
+}
+
+.back {
+    margin-bottom: 2rem;
+}
+
+.posts {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+}
+
+.posts, .posts ol, .posts li {
+    padding: unset;
+    list-style: none;
+}
+
+.posts li {
+    flex: 1;
+    min-width: clamp(10rem, 85vw, 50rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.posts li a {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    flex: 1;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+}
+
+.posts .hero {
+    object-fit: cover;
+    height: clamp(10rem, 20vw, 15rem);
+    flex: 1;
+    min-width: 22rem;
+    border-radius: 0.4rem;
+    background-color: var(--c1);
+    min-height: 13rem;
+    max-height: 30rem;
+}
+
+.posts .content {
+    display: flex;
+    flex-direction: column;
+    /* width: clamp(15rem, 85vw, 60rem); */
+    justify-content: center;
+    padding: 2rem 1rem 1rem clamp(2rem, 5vw, 5rem);
+}
+
+.posts li:hover a {
+    color:var(--c2);
+    transition: color 0.1s ease;
+    -webkit-transition: color 0.1s ease;
+    -moz-transition: color 0.1s ease;
+    -ms-transition: color 0.1s ease;
+    -o-transition: color 0.1s ease;
+}
+
+.posts h2 {
+    font-size: clamp(2.6rem, 8vw, 4rem);
+    line-height: 1.1;
+    cursor: pointer;
+}
+
+.posts a {
+    font-weight: 600;
+    border: 0.1rem solid var(--c2-e);
+    background-color: #EAEEFF;
+    transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -ms-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(3rem, 10vw, 6rem);
+    color: var(--c2);
+    line-height: 1.1;
+}
+
+.posts hr {
+    width: clamp(24rem, 62vw, 120rem);
+    border: unset;
+    height: 0.1rem;
+    background-color: var(--light-b);
+    margin-block: clamp(1rem, 5vw, 2rem);
+}
+
+
+
+
+@media screen and (min-width:800px) {
+    .posts .content {
+        padding: 3rem 1rem 3rem clamp(2rem, 5vw, 5rem);
+    }
+}

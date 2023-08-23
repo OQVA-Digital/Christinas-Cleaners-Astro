@@ -1,0 +1,146 @@
+---
+
+---
+
+<div id="cookie-consent-banner" class="cookie-consent-banner">
+    <h3>Cookie settings</h3>
+    <p>We use cookies to provide you with the best possible experience. They also allow us to analyze user behavior in order to constantly improve the website for you.</p>
+
+    <div class="bt_ctnr">
+        <button id="btn-accept-all" class="cookie-consent-button btn-success">Accept All</button>
+        <button id="btn-accept-some" class="cookie-consent-button btn-outline">Accept Selection</button>
+        <button id="btn-reject-all" class="cookie-consent-button btn-grayscale">Reject All</button>
+    </div>
+    <div class="cookie-consent-options">
+    <label><input id="consent-necessary" type="checkbox" value="Necessary" checked disabled>Necessary</label>
+    <label><input id="consent-analytics" type="checkbox" value="Analytics" checked>Analytics</label>
+    <label><input id="consent-preferences" type="checkbox" value="Preferences" checked>Preferences</label>
+    <label><input id="consent-marketing" type="checkbox" value="Marketing">Marketing</label>
+    </div>
+</div>
+
+<script>
+    import "../js/consent.js"
+</script>
+
+<style>
+.cookie-consent-banner {
+    display: none;
+    position: fixed;
+    bottom: clamp(2rem, 3vw, 4rem);
+    left: 2rem;
+    right: 2rem;
+    background-color: var(--light);
+    color: var(--c2-d);
+    padding: 2rem clamp(2.1rem,5vw,4rem) 2rem;
+    text-align: center;
+    z-index: 1000;
+    width: fit-content;
+    max-width: 75vw;
+    border-radius: 1rem;
+    max-width: 52rem;
+    border: 0.2rem solid var(--light-b);
+    margin-inline: auto;
+    border: 0.2rem solid var(--c1);
+    box-shadow: -0.35rem 0.35rem var(--c1), -0.7rem 0.7rem #fff8;
+}
+
+.cookie-consent-banner h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--c2-a);
+    font-weight: 650;
+    line-height: 1;
+}
+
+.cookie-consent-banner h3 + p {
+    margin-bottom: 1em;
+    font-weight: 500;
+    color: var(--grey);
+    line-height: 1.4;
+    /* max-width: 40rem; */
+    margin-inline: auto;
+    font-size: clamp(1.2rem,2.8vw,1.5rem);
+}
+
+.cookie-consent-banner .bt_ctnr {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1.2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.cookie-consent-button {
+    border: none;
+    padding: 0.9rem 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    flex: 1;
+}
+
+.cookie-consent-button:first-of-type {
+    min-width: 100%;
+}
+
+.cookie-consent-button:hover {
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cookie-consent-button:active {
+    opacity: .5;
+}
+
+.cookie-consent-button.btn-success {
+    background-color: var(--c2-b);
+    color: white;
+}
+
+.cookie-consent-button.btn-grayscale {
+    background-color: var(--dark);
+    color: var(--light-a);
+    font-weight: 400;
+}
+
+.cookie-consent-button.btn-outline {
+    background-color: var(--light-b);
+    color: var(--c2-a);
+    border: 0.1rem solid var(--c2);
+}
+
+.cookie-consent-options {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.cookie-consent-options label {
+    margin: 0 clamp(0rem, 1vw, 1rem);
+    font-size: 14px;
+}
+
+.cookie-consent-options input {
+    margin-right: 5px;
+}
+
+
+
+
+@media screen and (min-width:900px) {
+    .cookie-consent-button:first-of-type {
+        min-width: unset;
+    }
+
+    .cookie-consent-button {
+        flex: unset;    
+        padding-inline: 3rem;
+    }
+}
+
+</style>
