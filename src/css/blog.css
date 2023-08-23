@@ -24,6 +24,7 @@ time {
 .heading_ctnr {
     width: clamp(24rem, 84vw, 75rem);
     margin-inline: auto;
+    margin-top: 2rem;
 }
 
 

@@ -2,6 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 
 import '../css/home.css'
+
+import { getCollection } from "astro:content";
+const testimonials = await getCollection("testimonials");
 ---
 
 <Layout title="Christina's Cleaners · Empowering Ukrainian Refugees">
@@ -274,42 +277,33 @@ import '../css/home.css'
                     </div>
                     
                     <div class="slider">
-                        <div class="box">
-                            <div class="flex">
-                                <div class="profile">
-                                    <div class="photo p1"></div>
+                        {
+                            testimonials.map((testimonials) => (
+                                <div class="box">
+                                    <div class="flex">
+                                        <div class="profile">
+											<img class="photo" src={testimonials.data.avatar} alt={`${testimonials.data.name}'s avatar'`} loading="lazy"/>
 
-                                    <div>
-                                        <span class="name">Violando</span>
-                                        <span class="location">Summertown</span>
-                                        <hr>
+                                            <div>
+                                                <span class="name">{testimonials.data.name}</span>
+                                                
+                                                {testimonials.data.location ? (<span class="location">{testimonials.data.location}</span>) : ""}
+
+                                                <hr/>
+                                            </div>
+                                        </div>
+
+                                        <blockquote>
+												<p set:html={testimonials.data.paragraph01}></p>
+												
+												{testimonials.data.paragraph02 == "" ? null : (<p set:html={testimonials.data.paragraph02}></p>)}
+												
+												{testimonials.data.paragraph03 == "" ? null : (<p set:html={testimonials.data.paragraph03}></p>)}
+                                        </blockquote>
                                     </div>
                                 </div>
-
-                                <blockquote>
-                                    <p>"Christina has cleaned for me on several occasions, and has even had the keys to our house to feed our cats when we have been on holiday. Christina is cheerful, friendly and entirely trustworthy. She is a hard worker and a good cleaner and has always left our house spic and span when she has cleaned for us. I have no hesitation in recommending her services."</p>
-                                </blockquote>
-                            </div>
-                        </div>
-
-                        
-                        <div class="box">
-                            <div class="flex">
-                                <div class="profile">
-                                    <div class="photo p2"></div>
-
-                                    <div>
-                                        <span class="name">Andrei</span>
-                                        <span class="location">Headington</span>
-                                        <hr>
-                                    </div>
-                                </div>
-
-                                <blockquote class="short">
-                                    <p>"Christina's Cleaners are perfect! Easy to deal with and punctual. Would recommend to anyone!"</p>
-                                </blockquote>
-                            </div>
-                        </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>

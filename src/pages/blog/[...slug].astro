@@ -16,23 +16,7 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-	<div class="prompt">
-		<div class="fabian thumb"></div>
-
-		<span class="indicator">Fabian's Prompt</span>
-		<p set:html={post.data.prompt}></p>
-	</div>
-
 	<div class="content">
-		<div class="message_ctnr">
-			<div class="ia_photo">
-				<div class="thumb"></div>
-				<hr>
-			</div>
-			<div class="messages">
-				<span class="indicator">The Blog Post:</span>
-				<Content />
-			</div>
-		</div>
+		<Content />
 	</div>
 </BlogPost>

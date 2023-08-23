@@ -9,6 +9,8 @@ import '../css/global.css'
 
 import Header from '../components/Header.astro';
 import Strip from '../components/Strip.astro';
+
+import CookieConsentBanner from '../components/CookieConsentBanner.astro';
 ---
 
 <!DOCTYPE html>
@@ -27,6 +29,7 @@ import Strip from '../components/Strip.astro';
 		<Header></Header>
 		<slot />
 		<Strip></Strip>
+		<CookieConsentBanner></CookieConsentBanner>
 	</body>
 </html>
 <style is:global>

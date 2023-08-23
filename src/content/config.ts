@@ -19,4 +19,20 @@ const blog = defineCollection({
 	}),
 });
 
-export const collections = { blog };
+
+const testimonialsCollection = defineCollection({
+    type: 'content', // v2.5.0 and later
+    schema: z.object({
+        avatar: z.string(),
+        name: z.string(),
+        location: z.string().optional(),
+        paragraph01: z.string().optional(),
+        paragraph02: z.string().optional(),
+        paragraph03: z.string().optional(),
+    }),
+});
+
+export const collections = { 
+	'blog': blog,
+	'testimonials': testimonialsCollection
+};

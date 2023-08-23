@@ -796,23 +796,12 @@ section.testimonials {
 .profile .photo {
     width: clamp(7rem, 25vw, 17rem);
     height: clamp(7rem, 25vw, 17rem);
-    background-size: cover;
-    background-position: center;
+    object-fit: cover;
     border-radius: 50%;
     z-index: 1;
     background-color: var(--c2);
     box-shadow: 0.7rem 0.7rem 1.5rem #0002, -0.7rem -0.7rem 1.5rem #fff2;
     /* border: 0.2rem solid var(--c2); */
-}
-
-.profile .photo.p1 {
-    background-image: url(/testimonials/violando.jpg);
-    background-image: -webkit-image-set(url(/testimonials/violando.jpg) 1x, url(/testimonials/violando.webp) 1x);
-}
-
-.profile .photo.p2 {
-    background-image: url(/testimonials/andrei.jpg);
-    background-image: -webkit-image-set(url(/testimonials/andrei.jpg) 1x, url(/testimonials/andrei.webp) 1x);
 }
 
 .profile .name {
