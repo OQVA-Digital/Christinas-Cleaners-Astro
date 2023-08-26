@@ -4,13 +4,13 @@ main {
 
 .back {
     padding: 1rem 1.6rem;
-    background-color: var(--light-a);
+    background-color: var(--c2-a);
     border-radius: 0.4rem;
     display: block;
     font-size: 1.6rem;
-    font-weight: 600;
-    color: var(--c2-a);
-    border: 0.1rem solid var(--c2-b);
+    font-weight: 400;
+    color: var(--light);
+    border: 0.1rem solid var(--light);
     width: fit-content;
 }
 

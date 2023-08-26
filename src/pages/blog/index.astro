@@ -31,9 +31,13 @@ import '../../css/blog-posts.css'
 									<FormattedDate date={post.data.pubDate} />
 
 									<h2>{post.data.title}</h2>
+
+									<p class="description" set:html={post.data.description}></p>
+
+									<span class="read">Read story</span>
 								</div>
 
-								<img src={post.data.heroImage} class="hero" alt={post.data.description}/>
+								<img src={post.data.heroImage} class="hero" alt={post.data.title}/>
 							</a>
 						</li>
 					))

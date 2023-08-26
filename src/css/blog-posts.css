@@ -12,9 +12,9 @@ main section {
 }
 
 .posts {
-    display: flex;
-    flex-flow: row wrap;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(15rem, 75vw, 50rem), 1fr));
+    gap: clamp(2rem, 5vw, 5rem);
 }
 
 .posts, .posts ol, .posts li {
@@ -24,12 +24,14 @@ main section {
 
 .posts li {
     flex: 1;
-    min-width: clamp(10rem, 85vw, 50rem);
-    display: flex;
+    /* min-width: clamp(10rem, 85vw, 45rem); */
+    /* display: flex;
     flex-direction: column;
+    max-width: 35rem; */
 }
 
 .posts li a {
+    gap: clamp(1rem, 5vw, 3rem);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -42,14 +44,12 @@ main section {
 }
 
 .posts .hero {
-    object-fit: cover;
-    height: clamp(10rem, 20vw, 15rem);
-    flex: 1;
-    min-width: 22rem;
     border-radius: 0.4rem;
     background-color: var(--c1);
-    min-height: 13rem;
-    max-height: 30rem;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    object-position: center;
+    flex: 1;
 }
 
 .posts .content {
@@ -57,10 +57,27 @@ main section {
     flex-direction: column;
     /* width: clamp(15rem, 85vw, 60rem); */
     justify-content: center;
-    padding: 2rem 1rem 1rem clamp(2rem, 5vw, 5rem);
+    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem) 2rem clamp(2rem, 5vw, 4rem);
+    flex: 1;
 }
 
-.posts li:hover a {
+.posts .description {
+    font-size: clamp(1.5rem, 4vw, 1.6rem);
+    margin-block: 0.5rem 1rem;
+    font-weight: 500;
+    line-height: 1.35;
+    cursor: pointer;
+}
+
+.posts .read {
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-weight: 650;
+    line-height: 1.35;
+    text-decoration: underline 0.2rem;
+    text-underline-offset: 0.2rem;
+}
+
+.posts li:hover h2 {
     color:var(--c2);
     transition: color 0.1s ease;
     -webkit-transition: color 0.1s ease;
@@ -70,20 +87,20 @@ main section {
 }
 
 .posts h2 {
-    font-size: clamp(2.6rem, 8vw, 4rem);
-    line-height: 1.1;
+    font-size: clamp(2.6rem, 8vw, 3.5rem);
+    line-height: 1.2;
     cursor: pointer;
-}
-
-.posts a {
-    font-weight: 600;
-    border: 0.1rem solid var(--c2-e);
-    background-color: #EAEEFF;
+    font-weight: 700;
     transition: color 0.4s ease;
     -webkit-transition: color 0.4s ease;
     -moz-transition: color 0.4s ease;
     -ms-transition: color 0.4s ease;
     -o-transition: color 0.4s ease;
+}
+
+.posts a {
+    font-weight: 600;
+    border: 0.1rem solid #CDD;
 }
 
 h1 {
@@ -105,7 +122,25 @@ h1 {
 
 
 @media screen and (min-width:800px) {
+
+    .posts {
+    }
+    
     .posts .content {
-        padding: 3rem 1rem 3rem clamp(2rem, 5vw, 5rem);
+        padding-left: 0;
+    }
+
+    .posts li {
+        min-width: unset;
+    }
+
+    .posts li a {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    .posts .hero {
+
     }
 }

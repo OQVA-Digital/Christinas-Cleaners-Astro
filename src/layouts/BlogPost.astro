@@ -15,35 +15,9 @@ import '../css/post.css'
 import CookieConsentBanner from '../components/CookieConsentBanner.astro';
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-
-interface ScrollRevealObject {
-    reveal: (selector: string, options?: any) => void;
-}
-
-declare global {
-  function ScrollReveal(): ScrollRevealObject;
-}
 ---
 
 <!DOCTYPE html>
-
-<script is:inline src="/js/scrollreveal.min.js"></script>
-
-<script>
-    ScrollReveal().reveal('article .content p, article blockquote, article code, article ul, article ol, article h2, article h3, article h4, article h5, article h6', {
-        distance: '1rem',
-    	origin: 'left',
-        opacity: 0,
-        duration:600,
-        easing: 'ease-out',
-		delay:250,
-		interval:120,
-		viewOffset: {
-			top: 200,
-			bottom: 200,
-		},
-    });
-</script>
 
 <html lang="en">
 	<head>
@@ -60,29 +34,32 @@ declare global {
 		<Strip></Strip>
 		<Header></Header>
 		<main>
-			<div class="ctnr">
+			<div class="back_ctnr">
 				<a href="/blog/" class="back">Return Blog</a>
 			</div>
 			
-			{heroImage && <img width={720} height={360} src={heroImage} alt={description} class="hero" />}
-			<article>
+			<div class="article_flex">
+				{heroImage && <img width={720} height={360} src={heroImage} alt={description} class="hero" />}
 
-				<div class="heading_ctnr">	
-					<FormattedDate date={pubDate} />
+				<article>
 	
-					<h1 class="title">{title}</h1>
-
-					{
-						updatedDate && (
-							<div class="last-updated-on">
-								Last updated on <FormattedDate date={updatedDate} />
-							</div>
-						)
-					}
-					<hr />
-				</div>
-				<slot />
-			</article>
+					<div class="heading_ctnr">	
+						<FormattedDate date={pubDate} />
+		
+						<h1 class="title">{title}</h1>
+	
+						{
+							updatedDate && (
+								<div class="last-updated-on">
+									Last updated on <FormattedDate date={updatedDate} />
+								</div>
+							)
+						}
+						<hr />
+					</div>
+					<slot />
+				</article>
+			</div>
 		</main>
 
 		<CookieConsentBanner></CookieConsentBanner>
