@@ -50,6 +50,7 @@ main section {
     object-fit: cover;
     object-position: center;
     flex: 1;
+    max-width: 40rem;
 }
 
 .posts .content {
@@ -125,7 +126,7 @@ h1 {
 
     .posts {
     }
-    
+
     .posts .content {
         padding-left: 0;
     }
