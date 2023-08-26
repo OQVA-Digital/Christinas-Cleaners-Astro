@@ -14,7 +14,7 @@ main section {
 .posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(clamp(15rem, 75vw, 50rem), 1fr));
-    gap: clamp(2rem, 5vw, 5rem);
+    gap: clamp(2rem, 8vmin, 5rem);
 }
 
 .posts, .posts ol, .posts li {
@@ -24,10 +24,10 @@ main section {
 
 .posts li {
     flex: 1;
-    /* min-width: clamp(10rem, 85vw, 45rem); */
     /* display: flex;
     flex-direction: column;
     max-width: 35rem; */
+    box-shadow: 1rem 1rem 2rem #DEF;
 }
 
 .posts li a {
@@ -88,10 +88,11 @@ main section {
 }
 
 .posts h2 {
-    font-size: clamp(2.6rem, 8vw, 3.5rem);
+    font-size: clamp(2.6rem, 7.8vw, 3.5rem);
     line-height: 1.2;
     cursor: pointer;
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: 0.05rem;
     transition: color 0.4s ease;
     -webkit-transition: color 0.4s ease;
     -moz-transition: color 0.4s ease;
@@ -132,7 +133,7 @@ h1 {
     }
 
     .posts li {
-        min-width: unset;
+        max-width: 70rem;
     }
 
     .posts li a {
