@@ -13,9 +13,9 @@ import '../../css/blog-posts.css'
 ---
 
 <Layout title="Blog · Christina's Cleaners">
+	<a href="/" class="back">Return Home</a>
 	<main>
 		<section>
-			<a href="/" class="back">Return Home</a>
 			
 			<h1>Christina's Blog</h1>
 
@@ -32,7 +32,7 @@ import '../../css/blog-posts.css'
 
 									<h2>{post.data.title}</h2>
 
-									<p class="description" set:html={post.data.description}></p>
+									{post.data.description ? (<p class="description" set:html={post.data.description}></p>) : ""}
 
 									<span class="read">Read story</span>
 								</div>

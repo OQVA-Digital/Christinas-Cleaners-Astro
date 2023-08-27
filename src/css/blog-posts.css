@@ -1,5 +1,5 @@
 main {
-    padding-block: clamp(2rem, 5vw, 5rem);
+    padding-block: clamp(2rem, 15vw, 6rem) clamp(2rem, 5vw, 5rem);
 }
 
 main section {
@@ -8,7 +8,7 @@ main section {
 }
 
 .back {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 .posts {
@@ -24,10 +24,9 @@ main section {
 
 .posts li {
     flex: 1;
-    /* display: flex;
-    flex-direction: column;
-    max-width: 35rem; */
-    box-shadow: 1rem 1rem 2rem #DEF;
+    /* box-shadow: 1rem 0rem 3rem #DEF; */
+    font-weight: 600;
+    background-color: var(--light-a);
 }
 
 .posts li a {
@@ -44,13 +43,11 @@ main section {
 }
 
 .posts .hero {
-    border-radius: 0.4rem;
     background-color: var(--c1);
     aspect-ratio: 2 / 3;
     object-fit: cover;
     object-position: center;
     flex: 1;
-    max-width: 40rem;
 }
 
 .posts .content {
@@ -58,24 +55,38 @@ main section {
     flex-direction: column;
     /* width: clamp(15rem, 85vw, 60rem); */
     justify-content: center;
-    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem) 2rem clamp(2rem, 5vw, 4rem);
+    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem) 0 clamp(2rem, 5vw, 4rem);
     flex: 1;
 }
 
 .posts .description {
     font-size: clamp(1.5rem, 4vw, 1.6rem);
-    margin-block: 0.5rem 1rem;
+    margin-block: 0 1rem;
     font-weight: 500;
     line-height: 1.35;
     cursor: pointer;
 }
 
 .posts .read {
-    font-size: clamp(1.5rem, 4vw, 1.8rem);
-    font-weight: 650;
+    font-size: clamp(1.5rem, 4vw, 1.6rem);
+    font-weight: 500;
     line-height: 1.35;
-    text-decoration: underline 0.2rem;
-    text-underline-offset: 0.2rem;
+    color: #ABC;
+    letter-spacing: 0.05rem;
+}
+
+.posts h2 {
+    font-size: clamp(2.6rem, 7.2vw, 3rem);
+    line-height: 1.2;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 0.05rem;
+    transition: color 0.4s ease;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -ms-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    margin-bottom: 0.6rem;
 }
 
 .posts li:hover h2 {
@@ -87,22 +98,8 @@ main section {
     -o-transition: color 0.1s ease;
 }
 
-.posts h2 {
-    font-size: clamp(2.6rem, 7.8vw, 3.5rem);
-    line-height: 1.2;
-    cursor: pointer;
-    font-weight: 800;
-    letter-spacing: 0.05rem;
-    transition: color 0.4s ease;
-    -webkit-transition: color 0.4s ease;
-    -moz-transition: color 0.4s ease;
-    -ms-transition: color 0.4s ease;
-    -o-transition: color 0.4s ease;
-}
-
 .posts a {
-    font-weight: 600;
-    border: 0.1rem solid #CDD;
+    /* border: 0.1rem solid #CDD; */
 }
 
 h1 {
@@ -143,6 +140,6 @@ h1 {
     }
 
     .posts .hero {
-
+        max-width: 42%;
     }
 }

@@ -3,14 +3,17 @@ main {
 }
 
 .back {
+    position: absolute;
+    z-index: 2;
     padding: 1rem 1.6rem;
-    background-color: var(--c2-a);
-    border-radius: 0.4rem;
+    background-color: var(--light-a);
+    border-radius: 0 0 0.8rem 0;
     display: block;
     font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--light);
-    border: 0.1rem solid var(--light);
+    font-weight: 600;
+    color: var(--c2);
+    border-right: 0.1rem solid var(--c2-e);
+    border-bottom: 0.1rem solid var(--c2-e);
     width: fit-content;
 }
 
@@ -24,7 +27,7 @@ time {
 .heading_ctnr {
     width: clamp(24rem, 84vw, 75rem);
     margin-inline: auto;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
 

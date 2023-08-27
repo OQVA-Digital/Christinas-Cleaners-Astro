@@ -1,5 +1,5 @@
 :root {
-    --base-heading-size: clamp(2.6rem, 10vw, 5rem);
+    --base-heading-size: clamp(2.6rem, 6.8vw, 5rem);
     --profile-photo-dimensions: clamp(4rem, 13vw, 7rem);
 }
 
@@ -10,6 +10,9 @@ main article {
     width: clamp(24rem, 84vw, 75rem);
     font-size: 1.7rem;
     line-height: 1.5;
+    background-color: var(--light);
+    padding: 2rem;
+    border-radius: 0.9rem;
 }
 
 .article_flex {
@@ -20,16 +23,6 @@ main article {
 
 main article p {
     margin-top: 1.5rem;
-}
-
-.back_ctnr {
-    width: clamp(24rem, 84vw, 75rem);
-    margin-inline: auto;
-    position: absolute;
-    left:0;
-    right:0;
-    top: 2rem;
-    z-index: 1;
 }
 
 img.hero {
@@ -83,6 +76,12 @@ time + hr {
     margin-bottom: 1rem;
 }
 
+.heading_ctnr hr {
+    border: unset;
+    height: 0.2rem;
+    background-color: var(--light-a);
+}
+
 article .messages > p, article blockquote, article ul, article ol {
     margin-bottom: clamp(1.2rem, 4vw, 1.8rem);
     line-height: 1.5;
@@ -127,12 +126,27 @@ mark {
     background-color: var(--c1);
 }
 
+.end_back {
+    display: block;
+    text-align: center;
+    background-color: var(--c2);
+    border: 0.1rem solid var(--c2-e);
+    border-bottom: 0.5rem solid var(--c2-e);
+    padding: 1rem 0;
+    border-radius: 0.4rem;
+    font-weight: 400;
+    color: var(--light);
+    margin-top: 4rem;
+}
+
 @media screen and (min-width:600px) {
 
     main article {
         margin-top: 0;
         width: clamp(24rem, 62vw, 75rem);
         margin-inline: 5vw;
+        margin-top: 3rem;
+        padding: unset;
     }
 
     .article_flex {
