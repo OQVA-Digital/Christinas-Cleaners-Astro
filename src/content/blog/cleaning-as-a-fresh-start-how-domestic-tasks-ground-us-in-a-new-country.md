@@ -21,10 +21,7 @@ In essence, cleaning in Oxfordshire was more than just a job; it was a rite of p
 
 **Footnotes:**
 
-Oxfordshire, with its blend of ancient traditions and modern sensibilities, represents a unique slice of British culture. Its storied past and deep-rooted customs offer a stark contrast to many international newcomers, making adaptation both a challenge and a rewarding experience. ↩\
-
-While both cultures value family, tradition, and community, the manner in which they express these values can differ significantly. Ukrainian celebrations are often large, communal, and vibrant, while Oxfordshire traditions tend to be more structured, formal, and introspective. ↩\
-
-The demand for premium cleaners services in Oxfordshire is fueled not only by the historical significance of many residences but also by the locals' appreciation for tradition, quality, and attention to detail. ↩\
-
-As cleaners in Oxford, we're not just offering a service, but also weaving ourselves into the fabric of the community, learning its rhythms, and contributing to its story. ↩
+1. Oxfordshire, with its blend of ancient traditions and modern sensibilities, represents a unique slice of British culture. Its storied past and deep-rooted customs offer a stark contrast to many international newcomers, making adaptation both a challenge and a rewarding experience. ↩
+2. While both cultures value family, tradition, and community, the manner in which they express these values can differ significantly. Ukrainian celebrations are often large, communal, and vibrant, while Oxfordshire traditions tend to be more structured, formal, and introspective. ↩
+3. The demand for premium cleaners services in Oxfordshire is fueled not only by the historical significance of many residences but also by the locals' appreciation for tradition, quality, and attention to detail. ↩
+4. As cleaners in Oxford, we're not just offering a service, but also weaving ourselves into the fabric of the community, learning its rhythms, and contributing to its story. ↩
