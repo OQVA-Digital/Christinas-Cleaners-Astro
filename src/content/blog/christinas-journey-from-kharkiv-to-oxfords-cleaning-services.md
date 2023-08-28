@@ -23,8 +23,6 @@ It's been a challenging journey, from Kharkiv to Oxford, from law student to a l
 
 - - -
 
-**Footnotes:**
-
 [^1^]: Oxford, known for its world-renowned university and historic structures, has a burgeoning demand for top-notch domestic cleaning services. Christina's Cleaners has been at the forefront of meeting this need, combining quality with a unique social mission.
 
 [^2^]: The teaching of the Russian language in Ukraine, given its historical and political implications, has always been a subject of debate. This became especially sensitive given the recent conflicts and political tensions between the two nations.
