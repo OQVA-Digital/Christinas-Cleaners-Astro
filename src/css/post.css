@@ -44,6 +44,21 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
 }
 
+sup a {
+    color: var(--c2);
+    font-weight: 600;
+    background-color: var(--light-a);
+    padding-inline: 0.2rem;
+    border: 0.1rem solid transparent;
+    border-radius: 0.2rem;
+    margin-left: 0.1rem;
+}
+
+sup a:hover {
+    border-color: var(--c2-e);
+    background-color: var(--light);
+}
+
 article h2, article h3, article h4, article h5, article h6 {
     font-weight: 650;
     margin-block: 3rem 1rem;
