@@ -17,9 +17,14 @@ Furthermore, as we ventured into different homes and establishments across Oxfor
 
 In essence, cleaning in Oxfordshire was more than just a job; it was a rite of passage. A means to connect with our new environment, understand its intricacies, and gradually make it our own. Through the simple act of cleaning, we found our footing, established a sense of normalcy, and most importantly, began to feel at home.
 
----
+- - -
 
-Oxfordshire, with its blend of ancient traditions and modern sensibilities, represents a unique slice of British culture. Its storied past and deep-rooted customs offer a stark contrast to many international newcomers, making adaptation both a challenge and a rewarding experience. ↩
-While both cultures value family, tradition, and community, the manner in which they express these values can differ significantly. Ukrainian celebrations are often large, communal, and vibrant, while Oxfordshire traditions tend to be more structured, formal, and introspective. ↩
-The demand for premium cleaners services in Oxfordshire is fueled not only by the historical significance of many residences but also by the locals' appreciation for tradition, quality, and attention to detail. ↩
+**Footnotes:**
+
+Oxfordshire, with its blend of ancient traditions and modern sensibilities, represents a unique slice of British culture. Its storied past and deep-rooted customs offer a stark contrast to many international newcomers, making adaptation both a challenge and a rewarding experience. ↩\
+
+While both cultures value family, tradition, and community, the manner in which they express these values can differ significantly. Ukrainian celebrations are often large, communal, and vibrant, while Oxfordshire traditions tend to be more structured, formal, and introspective. ↩\
+
+The demand for premium cleaners services in Oxfordshire is fueled not only by the historical significance of many residences but also by the locals' appreciation for tradition, quality, and attention to detail. ↩\
+
 As cleaners in Oxford, we're not just offering a service, but also weaving ourselves into the fabric of the community, learning its rhythms, and contributing to its story. ↩
