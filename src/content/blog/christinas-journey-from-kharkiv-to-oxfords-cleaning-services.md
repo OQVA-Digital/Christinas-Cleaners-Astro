@@ -1,6 +1,6 @@
 ---
 title: Christina's Journey From Kharkiv to Oxford's Cleaning Services
-pubDate: Jun 18 2023
+pubDate: Jul 23 2023
 heroImage: /images/media/christina_still_profile.jpg
 ---
 My name is Christina. If you'd told the younger me - a child growing up amidst the remnants of Soviet Ukraine, a hopeful law student, a passionate hospitality lover - that I would one day establish a leading domestic cleaning service in Oxford[^1^], I might have been skeptical. But life, with its twisty turns and bumpy rides, often reshapes our destinies in ways we could never imagine.
