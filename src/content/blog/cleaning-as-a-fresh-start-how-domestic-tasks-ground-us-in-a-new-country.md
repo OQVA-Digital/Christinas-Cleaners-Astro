@@ -1,6 +1,6 @@
 ---
 title: "Cleaning as a Fresh Start: How Domestic Tasks Ground Us in a New Country"
-pubDate: Aug 28 2023
+pubDate: Jun 25 2023
 heroImage: /images/media/pexels-photo-15953914.webp
 ---
 Leaving behind the familiar streets of Ukraine and stepping into the cobbled lanes of Oxfordshire was, for many of us at Christina's Cleaners, akin to stepping into a new world1. The gentle rolling hills, historic spires, and the quintessentially British traditions were both enchanting and, at times, bewildering. From the reserved politeness of a British greeting to the unique charm of afternoon tea, adjusting to the cultural nuances of Oxfordshire was a journey in itself.
