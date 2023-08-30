@@ -4,6 +4,6 @@
 
     // META
 
-    export const SITE_TITLE = "Fabian's Office Cleaning Services";
+    export const SITE_TITLE = "Christina's Cleaners · Empowering Ukrainian Refugees";
 
-    export const SITE_DESCRIPTION = "From multinational corporations to bustling start-ups, my clients know one thing: when Fabian's on the job, a pristine carpet is guaranteed. Some of the leading office spaces in London shine because of my touch.";
+    export const SITE_DESCRIPTION = "We're a socially conscious cleaning company in Oxfordshire, committed to making a difference in the lives of female Ukrainian refugees.";
