@@ -1,16 +1,16 @@
 ---
-    
+    import {TEL, TEL_HREF, TEL_INTERNATIONAL, EMAIL} from '../consts'
 ---
 
 <div class="strip">
     <div class="width">
-        <a href="tel:447425078684" class="flex" title="call us" aria-label="Call us at +44 742 507 8684">
+        <a href=`tel:${TEL_HREF}` class="flex" title="call us" aria-label=`Call us at ${TEL_INTERNATIONAL}`>
             <div class="bg icon tel"></div>
-            <span>+44 742 507 8684</span>
+            <span>{TEL}</span>
         </a>
 
         <div class="flex">
-            <a href="mailto:info@christinas-cleaners.co.uk" class="bg icon mail" title="Email us" aria-label="E-mail us at info@christinas-cleaners.co.uk"></a>
+            <a href=`mailto:${EMAIL}` class="bg icon mail" title="Email us" aria-label=`E-mail us at ${EMAIL}`></a>
 
             <hr>
 
