@@ -3,20 +3,22 @@
 ---
 
 <a href="https://cleannetwork.co.uk/" target="_blank">
-    Part of
-    
-    <img src="https://cleannetwork.co.uk/logo/tcn-logo-360.png" alt="The Clean Network Logo" title="The Clean Network" loading="lazy">
+    <div class="ctnr">
+        <span>
+            Part of
+        </span>
+        
+        <img src="https://cleannetwork.co.uk/logo/tcn-logo-360.png" alt="The Clean Network Logo" title="The Clean Network" loading="lazy">
+    </div>
 </a>
 
 <style>
     a {
-        background-color: #106aa6;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
+        background-color: #106aa6;
         color: var(--light);
-        gap: 1rem;
         padding-block: clamp(1.5rem, 5vmin, 2rem);
         font-size: 1.7rem;
         font-weight: 300;
@@ -28,7 +30,18 @@
         transition:background-color 0s ease;
     }
 
-    a img {
-        width: clamp(5rem, 42vw, 19rem);
+    a .ctnr {
+        width: clamp(5rem, 42vw, 17rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        position: relative;
+    }
+
+    a span {
+        position: absolute;
+        right: calc(100% + 1.5rem);
+        width: max-content;
     }
 </style>
