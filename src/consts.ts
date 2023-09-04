@@ -5,7 +5,7 @@ export const SITE_DESCRIPTION = "We're a socially conscious cleaning company in 
     
 
 
-export const TEL = "742 507 8684"
+export const TEL = "0742 507 8684"
 
 export const TEL_INTERNATIONAL = "+44 742 507 8684"
 
