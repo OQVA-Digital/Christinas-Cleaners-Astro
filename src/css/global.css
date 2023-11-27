@@ -1,6 +1,7 @@
 :root {
     --light: #f8f8ff;
     --light-a: #e6f3ff;
+    --light-b:#c8d9e9;
 
     --dark: #242d35;
     --dark-a: #1b3254;
@@ -18,8 +19,12 @@
     --c2-e: #93c2e5;
 
     --c3: #ff4400;
+
     --width: clamp(24rem, 84vw, 150rem);
-    --header-height: clamp(5rem, calc(7vh + 7vw), 8rem);
+    --corner-width: calc((100vw - var(--width)) / 2);
+    --header-height: clamp(5rem, calc(7vh + 7vw), 7rem);
+    --vishyvka-height: 2.5rem;
+    --strip-height: 3rem;
 }
 
 html {
@@ -180,12 +185,19 @@ ol {
 
 .vishyvka {
     width: 100%;
-    height: 2.5rem;
+    height: var(--vishyvka-height);
     background-image: url(/vyshyvka.svg);
     background-position: center;
     background-size: auto;
     background-repeat: repeat no-repeat;
     background-color: var(--light);
+    position: relative;
+    z-index: 3;
+}
+
+header + .vishyvka {
+    position: sticky;
+    top:var(--header-height);
 }
 
 
@@ -207,6 +219,7 @@ form {
 }
 
 form label {
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
@@ -246,7 +259,6 @@ form button[type='submit'] {
     padding: 1.5rem 4rem;
     border-radius: 0.6rem;
     margin-top: clamp(2rem, 8vw, 3.5rem);
-    letter-spacing: 0.1rem;
     cursor: pointer;
     width: 100%;
     max-width: 40rem;
@@ -262,7 +274,7 @@ form button[type='submit'].disabled {
 }
 
 form button[type='submit'].disabled::before {
-    content: 'Please fill the form before submitting.';
+    content: 'Please fill the form to submitting.';
     opacity: 0;
     position: absolute;
     inset: 0;
@@ -271,6 +283,7 @@ form button[type='submit'].disabled::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 600;
 }
 
 form button[type='submit'].disabled:hover:before {
@@ -318,7 +331,7 @@ body form button[type='submit'].submited {
 }
 
 .bg.icon.mail {
-    background-image: url(/icons/mail.svg);
+    background-image: url(/icons/at.svg);
 }
 
 

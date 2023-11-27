@@ -30,7 +30,6 @@ main section {
 }
 
 .posts li a {
-    gap: clamp(1rem, 5vw, 3rem);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -43,7 +42,7 @@ main section {
 }
 
 .posts .hero {
-    background-color: var(--c1);
+    background-color: var(--light-b);
     aspect-ratio: 2 / 3;
     object-fit: cover;
     object-position: center;
@@ -55,8 +54,8 @@ main section {
     flex-direction: column;
     /* width: clamp(15rem, 85vw, 60rem); */
     justify-content: center;
-    padding: clamp(2rem, 3vw, 3rem) clamp(1rem, 2vw, 2rem) 0 clamp(2rem, 5vw, 4rem);
     flex: 1;
+    padding: clamp(1rem, 5vw, 3rem);
 }
 
 .posts .description {
@@ -126,7 +125,7 @@ h1 {
     }
 
     .posts .content {
-        padding-left: 0;
+        
     }
 
     .posts li {

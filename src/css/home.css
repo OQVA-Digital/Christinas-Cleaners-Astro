@@ -26,12 +26,20 @@ h1 strong {
     font-weight: inherit;
 }
 
-.intro h2 {
+.intro h2, .intro .content p {
     font-weight: 500;
-    font-size: clamp(1.4rem, 3.3vmin, 1.7rem);
-    line-height: 1.45;
-    margin-bottom: 2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
     /* max-width: 59rem; */
+}
+
+.intro h2 {
+    font-size: clamp(1.4rem, 3.8vmin, 1.7rem);
+}
+
+.intro .content p {
+    font-size: clamp(1.4rem, 3.3vmin, 1.7rem);
+    margin-bottom: 2rem;
 }
 
 .intro h2 strong {
@@ -85,6 +93,7 @@ h1 strong {
     background-position: center;
     background-repeat: no-repeat;
     z-index: 1;
+    cursor: pointer;
 }
 
 .vid_ctnr .play_state {
@@ -491,9 +500,9 @@ h2+.txt {
 .services .box p {
     color: var(--dark-a);
     font-weight: 500;
-    line-height: 1.4;
+    line-height: 1.5;
     margin-bottom: 1rem;
-    font-size: clamp(1.4rem, 3.5vw, 1.5rem);
+    font-size: clamp(1.4rem, 3.5vw, 1.55rem);
 }
 
 .services .box p b,
@@ -1014,7 +1023,26 @@ section.contact {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
+    position: sticky;
+    bottom: 2rem;
+}
+
+.fieldset_controls button:not(.disabled):hover {
+    background-color: var(--c2-c);
+    transition: background-color 0.1s ease;
+    -webkit-transition: background-color 0.1s ease;
+    -moz-transition: background-color 0.1s ease;
+    -ms-transition: background-color 0.1s ease;
+    -o-transition: background-color 0.1s ease;
+}
+
+.fieldset_controls button:not(.disabled) {
+    transition: background-color 0.4s ease;
+    -webkit-transition: background-color 0.4s ease;
+    -moz-transition: background-color 0.4s ease;
+    -ms-transition: background-color 0.4s ease;
+    -o-transition: background-color 0.4s ease;
 }
 
 .fieldset_controls .next.disabled,
@@ -1029,16 +1057,20 @@ section.contact {
     padding: 1rem 2rem;
     background-color: var(--c2-b);
     color: var(--light);
-    border-radius: 0.6rem;
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     cursor: pointer;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
 }
 
-.contact form fieldset:not(.visible) {
+.contact .content > fieldset:not(.visible) {
     display: none;
 }
 
-.contact form fieldset>div {
+.contact form .content > fieldset>div {
     min-width: clamp(10rem, 70vw, 37rem);
     width: clamp(10rem, 70vw, 37rem);
     display: flex;
@@ -1047,14 +1079,14 @@ section.contact {
     flex: 1;
 }
 
-.contact form fieldset p {
+.contact form .content > fieldset p {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.contact form fieldset legend {
-    padding: 0 1rem;
+.contact form .content > fieldset legend {
+    padding-inline: 1rem;
     color: var(--c2);
     font-weight: 500;
 }
@@ -1066,12 +1098,85 @@ section.contact {
     /* gap: 1.5rem; */
 }
 
+.contact .highlights {
+    display: flex;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+}
 
-/* .contact form .form_step {
+.contact .highlights.show {
+    visibility: visible;
+    opacity: 1;
+    height: auto;
+}
 
-} .contact form .form_step:not(.current) {
-    display: none;
-} */
+.contact .highlights .heading {
+    text-align: center;
+    font-weight: 600;
+    font-size: clamp(1.5rem, 3vw, 1.7rem);
+    padding-block: 2rem;
+    position: sticky;
+    top: calc(var(--header-height) + var(--vishyvka-height));
+    background-color: var(--light);
+}
+
+.contact .highlights fieldset {
+    justify-content: flex-start;
+    gap: 0.5rem;
+    flex-direction: column;
+    padding-block: 1.2rem 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.contact .highlights fieldset.red_zone {
+    border-color: crimson;
+}
+.contact .highlights fieldset.red_zone legend {
+    color: crimson;
+}
+
+.contact .highlights fieldset.green_zone {
+    border-color: green;
+}
+.contact .highlights fieldset.green_zone legend {
+    color: green;
+}
+
+.contact .highlights fieldset.blue_zone {
+    border-color: blue;
+}
+.contact .highlights fieldset.blue_zone legend {
+    color: blue;
+}
+
+.contact .highlights fieldset > div {
+    display: flex;
+    gap: 0.4rem;
+}
+
+.contact .highlights fieldset input {
+    width: initial;
+    display: initial;
+    min-width: initial;
+}
+
+.contact .highlights fieldset legend {
+    font-size: 1.8rem;
+}
+
+.contact .highlights fieldset legend sub {
+    display: block;
+    font-size: 1.4rem;
+    color:var(--dark);
+}
+
+
+
+
+
+
 
 
 
@@ -1202,6 +1307,6 @@ section.contact {
 
     .services .box {
         min-width: unset;
-        max-width: 34rem;
+        max-width: 39rem;
     }
 }

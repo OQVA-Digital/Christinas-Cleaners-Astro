@@ -6,20 +6,25 @@
 main article {
     margin-inline: auto;
     margin-bottom: clamp(4rem, 9vw, 10rem);
-    margin-top: -12rem;
-    width: clamp(24rem, 84vw, 75rem);
-    font-size: clamp(1.5rem, 3.8vw, 1.7rem);
+    width: clamp(24rem, 92vw, 75rem);
+    font-size: clamp(1.5rem, 4vw, 1.7rem);
     line-height: 1.6;
     background-color: var(--light);
-    padding: 2rem;
+    padding: 2rem clamp(2rem, 5vw, 4rem);
     border-radius: 0.9rem;
-    font-weight: 400;
+    font-weight: 500;
+    position: relative;
+    box-sizing: border-box;
+}
+
+main article .content_ctnr {
+    width: clamp(24rem, 85vw, 75rem);
 }
 
 .article_flex {
     display: flex;
     flex-flow: row wrap;
-    gap:2rem
+    gap:2rem;
 }
 
 main article p {
@@ -28,15 +33,14 @@ main article p {
 
 img.hero {
     display: block;
-    /* height: clamp(5rem, 50vw, 28rem); */
     object-fit: cover;
-    object-position: bottom center;
-    background-color: var(--c1);
+    object-position: center;
+    background-color: var(--light-b);
     flex: 1;
     min-width: clamp(10rem, 40vw, 29rem);
     aspect-ratio: 3 / 4;
-    /* max-width: 50rem; */
     height: fit-content;
+    margin-bottom: calc(clamp(10rem, 70vw, 50rem) * -1);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -90,6 +94,12 @@ h6 {
 }
 time + hr {
     margin-bottom: 1rem;
+}
+
+.heading_ctnr {
+    /* width: clamp(24rem, 84vw, 75rem); */
+    margin-inline: auto;
+    /* margin-top: 2rem; */
 }
 
 .heading_ctnr hr {
@@ -155,14 +165,32 @@ mark {
     margin-top: 4rem;
 }
 
+.footnotes ol {
+    padding-inline: clamp(4rem, 5vw, 6rem);
+}
+
+.footnotes li {
+    scroll-margin-top: calc(var(--header-height) + 3rem);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width:600px) {
 
     main article {
-        margin-top: 0;
-        width: clamp(24rem, 62vw, 75rem);
-        margin-inline: 5vw;
-        margin-top: 3rem;
-        padding: unset;
+        padding-top: 5rem;
     }
 
     .article_flex {
@@ -174,8 +202,22 @@ mark {
         top: var(--header-height);
         height: calc(100vh - var(--header-height));
         aspect-ratio: unset;
-        flex: 1;
         min-width: unset;
-        max-width: 34vw;
+    }
+
+    main article .content_ctnr {
+        width: unset;
+    }
+}
+
+
+@media screen and (min-width:800px) {
+    img.hero {
+        max-width: clamp(10rem, 29vw, 80rem);
+    }
+
+    main article {
+        width: clamp(24rem, 55vw, 86rem);
+        padding-inline: unset;
     }
 }

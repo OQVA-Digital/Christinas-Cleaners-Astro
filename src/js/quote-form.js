@@ -3,11 +3,29 @@ const nextBt = document.querySelector('.fieldset_controls .next')
 
 let formPosition = 0;
 
-const formFieldsets = document.querySelectorAll('.contact fieldset')
+const formFieldsets = document.querySelectorAll('.contact .content > fieldset')
 
 formFieldsets[formPosition].classList.add('visible')
 
 const lastFieldPos = formFieldsets.length - 1
+
+const typeOfCleaningInput = document.getElementById('cleaningService')
+const regularCleaningHighlights = document.querySelector('.contact .highlights')
+let showingHighlights = false;
+
+typeOfCleaningInput.addEventListener('change', function(event) {
+    if(showingHighlights == false) {
+        if(typeOfCleaningInput.value == 'Regular Domestic Cleaning') {
+            regularCleaningHighlights.classList.add('show')
+            showingHighlights = true;
+        } else {
+            return;
+        }
+    } else {
+        regularCleaningHighlights.classList.remove('show')
+        showingHighlights = false;
+    }
+})
 
 function checkFieldsets(direction) {
     if (direction == 'forwards') {

@@ -39,7 +39,9 @@ import '../../css/blog-posts.css'
 									<span class="read">Read story</span>
 								</div>
 
-								<img src={post.data.heroImage} class="hero" alt={post.data.title}/>
+								{post.data.heroImage ? (
+									<img src={post.data.heroImage} class="hero" alt={post.data.title}/>
+								) : null}
 							</a>
 						</li>
 					))
