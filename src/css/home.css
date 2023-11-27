@@ -1151,9 +1151,10 @@ section.contact {
     color: blue;
 }
 
-.contact .highlights fieldset > div {
+.contact .highlights fieldset > label {
     display: flex;
     gap: 0.4rem;
+    flex-direction: row;
 }
 
 .contact .highlights fieldset input {
