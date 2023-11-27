@@ -1230,12 +1230,6 @@ section.contact {
         background-color: var(--c2-b)
     }
 
-
-
-
-
-
-
     .profile {
         transform: translateX(calc((clamp(7rem, 25vw, 17rem) + clamp(2rem, 3vw, 4rem)) * -0.5));
     }
@@ -1308,5 +1302,11 @@ section.contact {
     .services .box {
         min-width: unset;
         max-width: 39rem;
+    }
+
+    .contact form .content>fieldset>div {
+        position: sticky;
+        top: calc(var(--header-height) + var(--vishyvka-height) + 2rem);
+        height: fit-content;
     }
 }
