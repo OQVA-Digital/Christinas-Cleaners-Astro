@@ -36,7 +36,9 @@ function checkFieldsets(direction) {
         formFieldsets[formPosition].classList.add('visible');
 
         if (formPosition === lastFieldPos) {
-        nextBt.classList.add('disabled');
+            nextBt.classList.add('disabled');
+
+            submitBt.classList.add('show')
         }
     }
     } else if (direction == 'backwards') {
@@ -59,13 +61,13 @@ const submitBt = document.querySelector('#get-a-quote .cta')
 
 for(let i=0;i<firstFields.length;i++) {
     firstFields[i].addEventListener('input', function() {
-        const allFilled = Array.from(firstFields).every(input => input.value.trim() !== '');
+        // const allFilled = Array.from(firstFields).every(input => input.value.trim() !== '');
 
-        if (allFilled) {
-            submitBt.classList.remove('disabled')
-        } else {
-            submitBt.classList.add('disabled')
-        }
+        // if (allFilled) {
+        //     submitBt.classList.remove('disabled')
+        // } else {
+        //     submitBt.classList.add('disabled')
+        // }
     })
 }
 
