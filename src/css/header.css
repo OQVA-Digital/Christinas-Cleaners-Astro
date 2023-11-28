@@ -19,6 +19,8 @@ header>.width {
     align-items: stretch;
     justify-content: space-between;
     flex: 1;
+    padding-right: 2rem;
+    box-sizing: border-box;
 }
 
 header .flex {
@@ -102,7 +104,7 @@ header .cta {
 .hambt {
     position: absolute;
     right: 0;
-    width: clamp(1.3rem, 5vw, 3.5rem);
+    width: var(--corner-width);
     height: clamp(2.5rem, 7vw, 3.5rem);
     display: flex;
     flex-direction: column;
@@ -123,6 +125,7 @@ header .cta {
 
     header>.width {
         gap: 2rem;
+        padding-right: unset;
     }
 
     header .flex {
