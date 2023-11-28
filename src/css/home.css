@@ -1070,6 +1070,16 @@ section.contact {
     display: none;
 }
 
+.contact p span.flex {
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact p span.flex input[type=number] {
+    min-width: unset;
+    width: 10rem;
+}
+
 .contact form .content > fieldset>div {
     min-width: clamp(10rem, 70vw, 37rem);
     width: clamp(10rem, 70vw, 37rem);
