@@ -17,7 +17,7 @@ On average, a cleaner in Oxford might charge slightly more compared to other par
 
 #### A Peek Into UK Rates
 
-Across the UK, cleaner rates can vary significantly based on location, the complexity of tasks, and the expertise offered. As of my last research, the average rate for a cleaner per hour in the UK can range between £10 to £20[^3^]. However, these figures can fluctuate based on various factors.
+Across the UK, cleaner rates can vary significantly based on location, the complexity of tasks, and the expertise offered. As of my last research, the average rate for a cleaner per hour in the UK can range between £25 to £40[^3^]. However, these figures can fluctuate based on various factors.
 
 #### The Christina's Cleaners Difference
 
