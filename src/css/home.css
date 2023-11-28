@@ -53,6 +53,7 @@ h1 strong {
     border: 0.2rem solid var(--light);
     box-shadow: -0.35rem 0.35rem var(--c1), -0.7rem 0.7rem #fff8;
     background-color: var(--c1);
+    padding-inline: clamp(0.9rem, 9vw, 4rem);
 }
 
 .intro .cta_ctnr a:not(.cta)::after {
