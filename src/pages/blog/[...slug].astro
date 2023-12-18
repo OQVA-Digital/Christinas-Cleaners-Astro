@@ -1,6 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from 'astro:content';
-import BlogPost from '../../layouts/BlogPost.astro';
+import Layout from '../../layouts/Layout.astro';
+import FormattedDate from '../../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>;
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -9,14 +12,83 @@ export async function getStaticPaths() {
 		props: post,
 	}));
 }
-type Props = CollectionEntry<'blog'>;
 
 const post = Astro.props;
 const { Content } = await post.render();
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) =>  a.data.pubDate.valueOf() - b.data.pubDate.valueOf() 
+);
+
+// const { post, title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+import '../../css/blog.css'
+import '../../css/post.css'
+
+import ContactSection from '../../components/ContactSection.astro';
+
+import { Schema } from 'astro-seo-schema';
 ---
 
-<BlogPost {...post.data}>
+<Layout {...post.data}>
 	<div class="content">
-		<Content />
+		
+		<a href="/blog" class="return">Return Blog</a>
+		<main>
+			
+			<div class="article_flex">
+				{post.data.heroImage && <img 
+				width={720} 
+				height={360}
+				src={post.data.heroImage}
+				alt={post.data.description ? post.data.description : post.data.title}
+				class="hero" />}
+
+				<article>
+					<div class="content_ctnr">
+						<div class="heading_ctnr">	
+							<FormattedDate date={post.data.pubDate} />
+			
+							<h1 class="title">{post.data.title}</h1>
+		
+							{
+								post.data.updatedDate && (
+									<div class="last-updated-on">
+										Last updated on <FormattedDate date={post.data.updatedDate} />
+									</div>
+								)
+							}
+							<hr />
+						</div>
+						<Content />
+	
+						<a href="/blog" class="end_back">Return Blog</a>
+					</div>
+				</article>
+			</div>
+		</main>
+
+		<ContactSection/>
 	</div>
-</BlogPost>
+
+    <Schema
+        item={{
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: `${post.data.title}`,
+            image: `${post.data.heroImage}`,
+            "author": [{
+                "@type": "Person",
+                "name": "Christina Nekrylova",
+            }],
+            "publisher": {
+                "@type": "Organization",
+                "name": "Christina's Cleaners",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "/logo/logo-white-bg.png"
+                }
+            }
+        }}
+    />
+</Layout>

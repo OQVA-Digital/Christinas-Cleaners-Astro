@@ -202,7 +202,7 @@ header .cta {
     }
 
     header nav a:hover {
-        background-color: white;
+        background-color: #ddefff;
         transition: background-color 0s ease;
     }
 

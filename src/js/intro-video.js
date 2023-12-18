@@ -10,6 +10,7 @@ videoStateButton.addEventListener('click', togglePlayState)
 function togglePlayState() {
     if(introVid.paused) {
         introVid.play()
+        introVid.muted = false;
 
         videoStateButton.style.backgroundImage = 'url("/icons/play.svg")';
         videoStateButton.style.cursor = 'default'

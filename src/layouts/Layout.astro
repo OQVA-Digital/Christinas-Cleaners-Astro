@@ -1,12 +1,5 @@
---- 
-interface Props {
-	title: string;
-	language?: string;
-}
-
-const { title, language } = Astro.props;
-
-import '../css/global.css'
+---
+const { title, language, description, keywords } = Astro.props;
 
 import Header from '../components/Header.astro';
 import Strip from '../components/Strip.astro';
@@ -14,19 +7,19 @@ import OQVABadge from '../components/OQVABadge.astro';
 // import TCNBadge from '../components/TCNBadge.astro';
 
 import CookieConsentBanner from '../components/CookieConsentBanner.astro';
+
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS, OG_IMAGE, BRAND_NAME, LEGAL_NAME, FACEBOOK_URL, LINKEDIN_URL, GOV_REGISTRY, TEL_HREF } from "../consts";
+
+import BaseHead from '../components/BaseHead.astro';
 ---
 
 <!DOCTYPE html>
 <html lang={!language ? "en" : language}>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="We're a socially conscious cleaning company in Oxfordshire, committed to making a difference in the lives of female Ukrainian refugees.">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+	<BaseHead 
+	title={title ? title : SITE_TITLE}
+	description={description ? description : SITE_DESCRIPTION}
+	keywords={keywords ? keywords : SITE_KEYWORDS} />
 
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
 	<body>
 		<Strip></Strip>
 		<Header></Header>

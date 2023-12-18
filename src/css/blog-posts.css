@@ -1,5 +1,5 @@
 main {
-    padding-block: clamp(2rem, 15vw, 6rem) clamp(2rem, 5vw, 5rem);
+    padding-block: clamp(2rem, 21vw, 10rem) clamp(2rem, 5vw, 5rem);
 }
 
 main section {
@@ -43,9 +43,9 @@ main section {
 
 .posts .hero {
     background-color: var(--light-b);
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 2 / 2;
     object-fit: cover;
-    object-position: center;
+    object-position: 50% 20%;
     flex: 1;
 }
 
