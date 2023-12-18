@@ -16,7 +16,7 @@ section.intro {
 h1 {
     font-size: clamp(2.1rem, calc(2.3vh + 2.7vw), 4.6rem);
     line-height: 1.4;
-    margin-bottom: 1.4rem;
+    /* margin-bottom: 1.4rem; */
     font-weight: 740;
 }
 
@@ -29,7 +29,7 @@ h1 strong {
 .intro h2, .intro .content p {
     font-weight: 500;
     line-height: 1.6;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     /* max-width: 59rem; */
 }
 
@@ -39,7 +39,10 @@ h1 strong {
 
 .intro .content p {
     font-size: clamp(1.4rem, 3.3vmin, 1.7rem);
-    margin-bottom: 2rem;
+}
+
+.intro .content p:last-of-type {
+    margin-bottom: 1rem;
 }
 
 .intro h2 strong {
@@ -81,6 +84,9 @@ h1 strong {
     max-width: 66rem;
     flex: 1;
     min-width: 24vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
 }
 
 .vid_ctnr {
