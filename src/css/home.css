@@ -33,7 +33,7 @@ h1 strong {
 }
 
 .intro h2 {
-    font-size: clamp(1.4rem, 4.2vmin, 1.7rem);
+    font-size: clamp(1.4rem, 4.2vmin, 2rem);
 }
 
 .intro .content p {
