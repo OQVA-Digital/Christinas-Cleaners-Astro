@@ -601,6 +601,7 @@ section.about {
     border: 0.2rem solid var(--light);
     /* box-shadow: 0 2rem 5rem -2.3rem var(--c1-c); */
     backdrop-filter: blur(0.6rem);
+    -webkit-backdrop-filter: blur(0.6rem);
 }
 
 .about .cta_ctnr {
