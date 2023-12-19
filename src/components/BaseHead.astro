@@ -12,6 +12,20 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS, OG_IMAGE, BRAND_NAME, LEGA
 
 
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-777GF0Q032"></script>
+    <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-777GF0Q032');
+    
+    ga('send', 'pageview', {
+        'Branch': '{{ BRANCH }}'
+    });
+    </script>
+    
     <meta charset="UTF-8" />
     <meta name="description" content={SITE_DESCRIPTION}>
     <meta name="keywords" content={SITE_KEYWORDS}>
