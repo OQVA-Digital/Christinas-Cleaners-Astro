@@ -29,5 +29,11 @@ import BaseHead from '../components/BaseHead.astro';
 
 		<!-- <TCNBadge></TCNBadge> -->
 		<OQVABadge></OQVABadge>
+
+		<script is:inline>
+			ga('send', 'pageview', {
+			  'Branch':  '{{ "BRANCH" }}'
+			});
+		</script>
 	</body>
 </html>
