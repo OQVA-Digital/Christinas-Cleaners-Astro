@@ -21,11 +21,11 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS, OG_IMAGE, BRAND_NAME, LEGA
 
     gtag('config', 'G-777GF0Q032');
     
-    ga('send', 'pageview', {
+    gtag('send', 'pageview', {
         'Branch': '{{ BRANCH }}'
     });
     </script>
-    
+
     <meta charset="UTF-8" />
     <meta name="description" content={SITE_DESCRIPTION}>
     <meta name="keywords" content={SITE_KEYWORDS}>
