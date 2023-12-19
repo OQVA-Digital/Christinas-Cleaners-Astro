@@ -32,13 +32,12 @@ main section {
 .posts li a {
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     flex: 1;
-    border-radius: 0.4rem;
-    -webkit-border-radius: 0.4rem;
-    -moz-border-radius: 0.4rem;
-    -ms-border-radius: 0.4rem;
-    -o-border-radius: 0.4rem;
+    border-radius: 1.6rem;
+    -webkit-border-radius: 1.6rem;
+    -moz-border-radius: 1.6rem;
+    -ms-border-radius: 1.6rem;
+    -o-border-radius: 1.6rem;
 }
 
 .posts .hero {
@@ -47,6 +46,11 @@ main section {
     object-fit: cover;
     object-position: 50% 20%;
     flex: 1;
+    border-radius: 1.6rem;
+    -webkit-border-radius: 1.6rem;
+    -moz-border-radius: 1.6rem;
+    -ms-border-radius: 1.6rem;
+    -o-border-radius: 1.6rem;
 }
 
 .posts .content {
@@ -75,7 +79,7 @@ main section {
 }
 
 .posts h2 {
-    font-size: clamp(2.6rem, 7.2vw, 3rem);
+    font-size: clamp(2rem, 5.9vw, 3rem);
     line-height: 1.2;
     cursor: pointer;
     font-weight: 800;
@@ -130,6 +134,7 @@ h1 {
 
     .posts li {
         max-width: 70rem;
+        height: fit-content;
     }
 
     .posts li a {
