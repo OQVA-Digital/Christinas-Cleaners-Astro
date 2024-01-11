@@ -1,0 +1,41 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+
+import type { CollectionEntry } from 'astro:content';
+import Header from '../components/Header.astro';
+import Strip from '../components/Strip.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import OQVABadge from '../components/OQVABadge.astro';
+// import TCNBadge from '../components/TCNBadge.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS } from "../consts";
+
+import '../css/blog.css'
+import '../css/post.css'
+
+import CookieConsentBanner from '../components/CookieConsentBanner.astro';
+---
+
+<!DOCTYPE html>
+
+<html lang="en">
+	<BaseHead 
+	title={title ? title : SITE_TITLE}
+	description={description ? description : SITE_DESCRIPTION}
+	keywords={SITE_KEYWORDS} />
+
+	<body>
+		<Strip></Strip>
+		<Header></Header>
+
+		<CookieConsentBanner></CookieConsentBanner>
+		<Strip></Strip>
+
+		<!-- <TCNBadge></TCNBadge> -->
+		<OQVABadge></OQVABadge>
+	</body>
+</html>
