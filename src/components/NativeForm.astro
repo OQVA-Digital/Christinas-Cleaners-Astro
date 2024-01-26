@@ -1,0 +1,457 @@
+---
+
+---
+
+
+<form id="main-form" name="quote-submission" method="POST" data-netlify="true">
+
+    <div class="content">
+        <fieldset>
+            <legend>About You</legend>
+
+            <div>
+                <p>
+                    <label for="name">Your Name:
+                        <input type="text" id="name" name="name" autocomplete="name">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="surname">Surname:
+                        <input type="text" id="surname" name="surname" autocomplete="family-name">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="email">Email:
+                        <input type="email" id="email" name="email" autocomplete="email">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="phone">Contact Number:
+                        <input type="tel" id="phone" name="phone" autocomplete="tel">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="contactPreference">Preferred method of contact:
+                        <select id="contactPreference" name="contactPreference">
+                            <option disabled selected value="">--- Select ---</option>
+                            <option value="Email">Email</option>
+                            <option value="Phone">Phone</option>
+                        </select>
+                    </label>
+                </p>
+            </div>
+        </fieldset>
+
+
+
+
+        <fieldset>
+            <legend>About the Property</legend>
+
+            <div>
+                <p>
+                    <label for="streetAddress">Street Address:
+                        <input type="text" id="streetAddress" name="streetAddress" autocomplete="street-address">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="postcode">Postcode:
+                        <input type="text" id="postcode" name="postcode" autocomplete="postal-code">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="city">City:
+                        <input type="text" id="city" name="city" autocomplete="address-level2">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="property-square-footage">Property Square Footage:
+                        <span class="flex">
+                            <input type="number" id="property-square-footage" name="property-square-footage" min="0">
+                            <span>Square Feet</span>
+                        </span>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="specialInstruction">Are there any special instructions for finding your property?
+                        <textarea id="specialInstruction" name="specialInstruction" aria-describedby="specialInstructionDesc"></textarea>
+                    </label>
+                    <span id="specialInstructionDesc" class="visually-hidden">Please provide any additional information that can help locate your property.</span>
+                </p>
+            </div>
+        </fieldset>
+
+
+
+
+        <fieldset>
+            <legend>About the Cleaning</legend>
+
+            <div>
+                <p>
+                    <label for="cleaningService">Type of Cleaning Service required:
+                        <select id="cleaningService" name="cleaningService">
+                            <option disabled selected value="">--- Select ---</option>
+                            <option value="Regular Domestic Cleaning">Regular Basic Cleaning</option>
+                            <!-- <option value="Subscription-based Regular Cleaning">Deep Clean</option> -->
+                            <option value="Specialised Cleaning Services">End of Tenancy Cleaning</option>
+                        </select>
+                    </label>
+                </p>
+
+                <div class="highlights">
+                    <span class="heading">Tasks for Regular Basic Cleaning</span>
+
+                    <fieldset class="red_zone">
+                        <legend>Red Zone<sub>Bath & Shower rooms & WC</sub></legend>
+
+                        <label>
+                            <input type="checkbox" id="dust-for-cobwebs-redzone" name="redzone-highlights" value="dust-for-cobwebs-redzone" />
+                            Dust for cobwebs
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-off-all-surfaces-redzone" name="redzone-highlights" value="dust-off-all-surfaces-redzone" />
+                            Dust off all surfaces
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-bin-and-empty-all-trash-redzone" name="redzone-highlights" value="clean-bin-and-empty-all-trash-redzone" />
+                            Clean Bin & Empty all trash
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="tidy-up-redzone" name="redzone-highlights" value="tidy-up-redzone" />
+                            Tidy Up
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="polish-mirrors-redzone" name="redzone-highlights" value="polish-mirrors-redzone" />
+                            Polish mirrors
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-glosswork-redzone" name="redzone-highlights" value="dust-glosswork-redzone" />
+                            Dust glosswork
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="remove-hairs-from-plug-hole-redzone" name="redzone-highlights" value="remove-hairs-from-plug-hole-redzone" />
+                            Remove hairs from plug hole
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="add-toilet-cleaner-redzone" name="redzone-highlights" value="add-toilet-cleaner-redzone" />
+                            Add toilet cleaner
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-shower-redzone" name="redzone-highlights" value="clean-shower-redzone" />
+                            Clean shower
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="scrub-bath-redzone" name="redzone-highlights" value="scrub-bath-redzone" />
+                            Scrub bath
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-sink-redzone" name="redzone-highlights" value="clean-sink-redzone" />
+                            Clean sink
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="scrub-and-clean-toilet-and-bowl-redzone" name="redzone-highlights" value="scrub-and-clean-toilet-and-bowl-redzone" />
+                            Scrub & clean toilet & bowl
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="vacuum-and-mop-floor-redzone" name="redzone-highlights" value="vacuum-and-mop-floor-redzone" />
+                            Vacuum & Mop floor
+                        </label>
+                    </fieldset>
+                    
+                    <fieldset class="green_zone">
+                        <legend>Green Zone<sub>Kitchen & Utility</sub></legend>
+
+                        <label>
+                            <input type="checkbox" id="dust-for-cobwebs-greenzone" name="greenzone-highlights" value="dust-for-cobwebs-greenzone" />
+                            Dust for cobwebs
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-off-all-surfaces-greenzone" name="greenzone-highlights" value="dust-off-all-surfaces-greenzone" />
+                            Dust off all surfaces
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="inside-fridge-on-request-greenzone" name="greenzone-highlights" value="inside-fridge-on-request-greenzone" />
+                            Inside fridge on request
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-bin-and-empty-all-trash-greenzone" name="greenzone-highlights" value="clean-bin-and-empty-all-trash-greenzone" />
+                            Clean Bin & Empty all trash
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="tidy-up-greenzone" name="greenzone-highlights" value="tidy-up-greenzone" />
+                            Tidy Up
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-glosswork-greenzone" name="greenzone-highlights" value="dust-glosswork-greenzone" />
+                            Dust glosswork
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-hob-and-extractor-greenzone" name="greenzone-highlights" value="clean-hob-and-extractor-greenzone" />
+                            Clean Hob & extractor
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="switches-and-handles-greenzone" name="greenzone-highlights" value="switches-and-handles-greenzone" />
+                            Switches and handles
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="backsplash-area-and-worktops-greenzone" name="greenzone-highlights" value="backsplash-area-and-worktops-greenzone" />
+                            Backsplash area & worktops
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-furniture-greenzone" name="greenzone-highlights" value="clean-furniture-greenzone" />
+                            Clean furniture
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-and-shine-sink-greenzone" name="greenzone-highlights" value="clean-and-shine-sink-greenzone" />
+                            Clean & shine sink
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="vacuum-floor-greenzone" name="greenzone-highlights" value="vacuum-floor-greenzone" />
+                            Vacuum floor
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="vacuum-and-mop-floor-greenzone" name="greenzone-highlights" value="vacuum-and-mop-floor-greenzone" />
+                            Vacuum & Mop floor
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="wipe-off-work-surfaces-greenzone" name="greenzone-highlights" value="wipe-off-work-surfaces-greenzone" />
+                            Wipe off work surfaces
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="inside-oven-on-request-greenzone" name="greenzone-highlights" value="inside-oven-on-request-greenzone" />
+                            Inside oven on request
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="microwave-on-request-greenzone" name="greenzone-highlights" value="microwave-on-request-greenzone" />
+                            Microwave on request
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="cupboard-fronts-greenzone" name="greenzone-highlights" value="cupboard-fronts-greenzone" />
+                            Cupboard fronts
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="kitchen-equipment-toaster-etc-greenzone" name="greenzone-highlights" value="kitchen-equipment-toaster-etc-greenzone" />
+                            Kitchen equipment / toaster etc.
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="blue_zone">
+                        <legend>Blue Zone<sub>Lounge, Bedrooms and all other rooms</sub></legend>
+
+                        <label>
+                            <input type="checkbox" id="dust-for-cobwebs-bluezone" name="bluezone-highlights" value="dust-for-cobwebs-bluezone" />
+                            Dust for cobwebs
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-bin-and-empty-all-trash-bluezone" name="bluezone-highlights" value="clean-bin-and-empty-all-trash-bluezone" />
+                            Clean Bin & Empty all trash
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="change-bed-linen-bluezone" name="bluezone-highlights" value="change-bed-linen-bluezone" />
+                            Change bed linen (optional)
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-glosswork-bluezone" name="bluezone-highlights" value="dust-glosswork-bluezone" />
+                            Dust glosswork
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-all-fixtures-and-fittings-bluezone" name="bluezone-highlights" value="dust-all-fixtures-and-fittings-bluezone" />
+                            Dust all fixtures and fittings
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="vacuum-upholstery-bluezone" name="bluezone-highlights" value="vacuum-upholstery-bluezone" />
+                            Vacuum upholstery
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-front-door-and-porchway-bluezone" name="bluezone-highlights" value="clean-front-door-and-porchway-bluezone" />
+                            Clean front door & porchway
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="dust-off-all-surfaces-bluezone" name="bluezone-highlights" value="dust-off-all-surfaces-bluezone" />
+                            Dust off all surfaces
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="tidy-up-bluezone" name="bluezone-highlights" value="tidy-up-bluezone" />
+                            Tidy Up
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="polish-mirrors-bluezone" name="bluezone-highlights" value="polish-mirrors-bluezone" />
+                            Polish mirrors
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="switches-and-handles-bluezone" name="bluezone-highlights" value="switches-and-handles-bluezone" />
+                            Switches & Handles
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="clean-furniture-bluezone" name="bluezone-highlights" value="clean-furniture-bluezone" />
+                            Clean furniture
+                        </label>
+
+                        <label>
+                            <input type="checkbox" id="vacuum-and-mop-floor-bluezone" name="bluezone-highlights" value="vacuum-and-mop-floor-bluezone" />
+                            Vacuum & Mop Floor
+                        </label>
+                    </fieldset>
+                </div>
+
+                <p>
+                    <label for="bedrooms">Number of Bedrooms:
+                        <input type="number" id="bedrooms" name="bedrooms" autocomplete="off" min="0">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="bathrooms">Number of Bathrooms:
+                        <input type="number" id="bathrooms" name="bathrooms" autocomplete="off" min="0">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="otherRooms">Other rooms requiring cleaning (Please specify):
+                        <textarea id="otherRooms" name="otherRooms"></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="extraAttention">Are there any specific areas needing extra attention or services required beyond the standard cleaning package?
+                        <textarea id="extraAttention" name="extraAttention"></textarea>
+                    </label>
+                </p>
+                
+            </div>
+
+            <div>
+
+                <p>
+                    <label for="cleaningDate">Preferred Start Date:
+                        <input type="date" id="cleaningDate" name="cleaningDate" min="2023-06-02">
+                    </label>
+                </p>
+
+                <p>
+                    <label for="cleaningTime">Preferred Start Time:
+                        <input type="time" id="cleaningTime" name="cleaningTime" min="08:00" max="20:00" autocomplete="off">
+                        <sub>From 08:00 to 20:00</sub>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="frequency">Frequency of Cleaning:
+                        <select id="frequency" name="frequency">
+                            <option disabled selected value="">--- Select ---</option>
+                            <option value="One-time">One-time</option>
+                            <option value="Weekly">Weekly</option>
+                            <option value="Bi-weekly">Bi-weekly</option>
+                            <option value="Monthly">Monthly</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="instructions">Are there any specific cleaning instructions or special requests?
+                        <textarea id="instructions" name="instructions"></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="pets">Are there any pets in the house? If yes, please specify.
+                        <textarea id="pets" name="pets"></textarea>
+                    </label>
+                </p>
+
+                <p>
+                    <label for="heard-about-us">How did you hear about us?
+                        <textarea id="heard-about-us" name="heard-about-us" placeholder="e.g.: social networks, personal recommendation"></textarea>
+                    </label>
+                </p>
+                
+            </div>
+        </fieldset>
+
+
+
+
+        <fieldset>
+            <legend>Payment</legend>
+
+            <div>
+                <p>
+                    <label for="payment">Preferred Method of Payment:
+                        <select id="payment" name="payment">
+                            <option disabled selected value="">--- Select ---</option>
+                            <option value="Credit Card">Credit Card</option>
+                            <option value="Debit Card">Debit Card</option>
+                            <option value="Bank Transfer">Bank Transfer</option>
+                            <option value="Cash">Cash</option>
+                        </select>
+                    </label>
+                </p>
+            </div>
+        </fieldset>
+
+        <div class="fieldset_controls">
+            <button type="button" class="back disabled" aria-label="Back to previous fields">Back</button>
+
+            <button type="button" class="next" aria-label="Next fieldset button">Next</button>
+        </div>
+    </div>
+    <p>
+        <button class="cta" type="submit" name="submit">Get a Quote!</button>
+
+        <p class="obs">Please note that your booking is <b>subject to confirmation</b>. We will contact you shortly to confirm the details of your booking and provide you with a quote.</p>
+    </p>
+</form>
+
+<script>
+    import '../js/quote-form.js'
+    import "../js/form.js"
+</script>

@@ -17,7 +17,7 @@ section.contact {
 }
 
 .contact .ctnr {
-    /* width: clamp(10rem, 85vw, 90rem); */
+    width: clamp(10rem, 85vw, 120rem);
     background-color: var(--light);
     border-radius: 3rem;
     padding: 4rem clamp(0.8rem, 5vw, 4rem) 3rem;
@@ -76,7 +76,8 @@ section.contact {
 
 .contact h2+.txt {
     font-weight: 500;
-    max-width: 40rem;
+    /* max-width: 40rem; */
+    max-width: 80rem;
     text-align: center;
     font-size: clamp(1.4rem, 3.6vmin, 1.55rem);
     margin: 1rem auto 3rem;

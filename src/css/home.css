@@ -45,7 +45,7 @@ h1 strong {
 }
 
 .intro h2 strong {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--c2);
 }
 
@@ -619,7 +619,12 @@ section.about {
 .about .width p {
     font-size: clamp(1.3rem, 3.8vw, 1.7rem);
     font-weight: 500;
-    line-height: 1.5;
+    line-height: 1.6;
+}
+
+.about .width p.minor {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-weight: 600;
 }
 
 .about p strong,
