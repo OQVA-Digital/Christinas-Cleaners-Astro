@@ -17,7 +17,7 @@ section.contact {
 }
 
 .contact .ctnr {
-    width: clamp(10rem, 85vw, 120rem);
+    width: clamp(10rem, 85vw, 80rem);
     background-color: var(--light);
     border-radius: 3rem;
     padding: 4rem clamp(0.8rem, 5vw, 4rem) 3rem;
