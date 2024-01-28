@@ -15,7 +15,7 @@ main .width {
     width: clamp(24rem, 84vw, 76rem);
 }
 
-.hambt {
+/* .hambt {
     position: relative;
     width: clamp(2.5rem, 8vw, 3.5rem);
     height: clamp(2.5rem, 8vw, 3.5rem);
@@ -23,7 +23,7 @@ main .width {
 
 .hambt div {
     border-radius: 0.2rem;
-}
+} */
 
 .jobs h1 {
     font-size: clamp(2.5rem, 9vw, 6.2rem);
@@ -195,7 +195,7 @@ li::marker {
     height: 60%;
     z-index: 2;
     margin: 0 auto;
-    overflow: auto;
+    /* overflow: auto; */
     top: 50%;
     left: 0;
     right: 0;
@@ -203,7 +203,7 @@ li::marker {
     box-sizing: border-box;
     border-radius: 1.2rem;
     width: clamp(24rem, 84vw, 76rem);
-    scroll-margin: var(--header-height);
+    scroll-margin: calc(var(--header-height) * 2);
 }
 
 .contact_ctnr .width {width: clamp(24rem, 72vw, 65rem);}

@@ -95,7 +95,7 @@ header nav a:not(:last-child)::after {
     bottom: 0;
     height: 0.1rem;
     width: 20%;
-    background-color: var(--c2-e);
+    background-color: var(--light-b);
 }
 
 header .cta {
