@@ -1,5 +1,5 @@
 ---
-const { title, language, description, keywords } = Astro.props;
+const { title, language, description, keywords, bodyClass } = Astro.props;
 
 import Header from '../components/Header.astro';
 import Strip from '../components/Strip.astro';
@@ -20,7 +20,7 @@ import BaseHead from '../components/BaseHead.astro';
 	description={description ? description : SITE_DESCRIPTION}
 	keywords={keywords ? keywords : SITE_KEYWORDS} />
 
-	<body>
+	<body class={bodyClass ? bodyClass : null}>
 		<Strip></Strip>
 		<Header></Header>
 		<slot />
