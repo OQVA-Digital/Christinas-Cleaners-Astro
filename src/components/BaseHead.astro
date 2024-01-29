@@ -75,22 +75,23 @@ import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEYWORDS, OG_IMAGE, BRAND_NAME, LEGA
         }}
     />
 
-    <!-- <script is:inline>
+    <script is:inline>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         
         if(localStorage.getItem('consentMode') === null){
             gtag('consent', 'default', {
-                'ad_storage': 'denied',
-                'analytics_storage': 'denied',
-                'personalization_storage': 'denied',
-                'functionality_storage': 'denied',
-                'security_storage': 'denied',
+                // Granted as a test!
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted',
+                'personalization_storage': 'granted',
+                'functionality_storage': 'granted',
+                'security_storage': 'granted',
             });
         } else {
             gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));
         }
-    </script> -->
+    </script>
 
     <link rel="preload" href="https://christinas-cleaners.launch27.com/jsbundle" as="document">
     <link rel="preload" href="https://christinas-cleaners.launch27.com/?w_cleaning" as="document">
