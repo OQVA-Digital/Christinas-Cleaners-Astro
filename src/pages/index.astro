@@ -20,7 +20,7 @@ const testimonials = (await getCollection('testimonials')).sort((a, b) => {
     }
 });
 
-import {TEL, TEL_HREF, TEL_INTERNATIONAL} from '../consts'
+import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT} from '../consts'
 
 ---
 
@@ -93,10 +93,10 @@ import {TEL, TEL_HREF, TEL_INTERNATIONAL} from '../consts'
                             <span class="price">
                                 <span class="flex discount">
                                     <!-- <span>25% OFF</span> -->
-                                    <del>£33</del>
+                                    <del>£{REGULAR_PRICE}</del>
                                 </span>
                                 <span class="flex final_price">
-                                    £25 <sub>per<br>hour</sub>
+                                    £{Math.ceil(REGULAR_PRICE * DISCOUNT)} <sub>per<br>hour</sub>
                                 </span>
                             </span>
                             
