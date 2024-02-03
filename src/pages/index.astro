@@ -22,6 +22,8 @@ const testimonials = (await getCollection('testimonials')).sort((a, b) => {
 
 import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT_PERCENTAGE} from '../consts'
 
+import ExitPopup from '../components/ExitPopup.astro';
+
 ---
 
 <Layout>
@@ -99,7 +101,7 @@ import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT_PERCENTAGE} fr
                             <div class="tooltip">
                                 <button type="button" aria-label="tooltip"></button>
     
-                                <p>Our Single Clean service includes dusting, vacuuming, mopping, kitchen cleaning, bathroom cleaning, and general tidying. We focus on high-traffic areas, ensuring they're always inviting and fresh. This service is perfect to understand how we work without having to commit.</p>
+                                <p>Our Single Clean service includes <b>dusting, vacuuming, mopping, kitchen cleaning, bathroom cleaning, and general tidying.</b> We focus on high-traffic areas, ensuring they're always inviting and fresh. This service is perfect to understand how we work without having to commit.</p>
                             </div>
                         </div>
 
@@ -123,7 +125,7 @@ import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT_PERCENTAGE} fr
                                     <!-- <span>25% OFF</span> -->
                                     <del>£{REGULAR_PRICE}</del>
                                 </span>
-                                <span class="flex final_price">
+                                <span class="flex final_price highlight">
                                     £{Math.ceil(REGULAR_PRICE * (1 - (DISCOUNT_PERCENTAGE / 100)))} <sub>per<br>hour</sub>
                                 </span>
                             </span>
@@ -334,6 +336,8 @@ import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT_PERCENTAGE} fr
 
         <ContactSection/>
 	</main>
+
+    <ExitPopup/>
 </Layout>
 
 <style>
