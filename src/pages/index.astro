@@ -20,7 +20,7 @@ const testimonials = (await getCollection('testimonials')).sort((a, b) => {
     }
 });
 
-import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT} from '../consts'
+import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT_PERCENTAGE} from '../consts'
 
 ---
 
@@ -124,7 +124,7 @@ import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT} from '../cons
                                     <del>£{REGULAR_PRICE}</del>
                                 </span>
                                 <span class="flex final_price">
-                                    £{Math.ceil(REGULAR_PRICE * DISCOUNT)} <sub>per<br>hour</sub>
+                                    £{Math.ceil(REGULAR_PRICE * (1 - (DISCOUNT_PERCENTAGE / 100)))} <sub>per<br>hour</sub>
                                 </span>
                             </span>
                             
@@ -135,7 +135,7 @@ import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT} from '../cons
                             </div>
                         </div>
 
-                        <a class="cta" href="#get-a-quote" aria-label="Get 25% OFF!">Get 25% OFF!</a>
+                        <a class="cta" href="#get-a-quote" aria-label={`Get ${Math.ceil((1 - DISCOUNT_PERCENTAGE) * 100)}% OFF!`}>Get {DISCOUNT_PERCENTAGE}% OFF!</a>
                     </div>
                     
                     <!-- <div class="box">

@@ -13,7 +13,7 @@ export const TEL_HREF = "+447425078684"
 
 
 export const REGULAR_PRICE = 25
-export const DISCOUNT = 0.80;
+export const DISCOUNT_PERCENTAGE = 20;
 
 
 export const EMAIL = "info@christinas-cleaners.co.uk"
