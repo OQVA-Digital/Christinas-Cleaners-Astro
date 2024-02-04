@@ -1,61 +1,82 @@
 ---
-
+    import {DISCOUNT_PERCENTAGE} from '../consts.js'
 ---
 
-<aside class="exit_popup hidden">
-    <p class="title"><b>20% OFF</b> YOUR FIRST CLEAN.</p>
+<div class="exit_popup_ctnr hidden">
+    <aside class="exit_popup">
+        <div class="vishyvka"></div>
+        <p class="title"><b>{DISCOUNT_PERCENTAGE}% OFF</b> YOUR FIRST CLEAN.</p>
+    
+        <p class="text">We're certain that we will impress you.</p>
+    
+        <a class="cta" href="/contact/" aria-label="Book Now">Book Now.</a>
+    
+        <button role="button" class="close" aria-label="close popup" title="close_popup"></button>
+        <div class="vishyvka"></div>
+    </aside>
 
-    <p class="text">We're certain that we will impress you.</p>
+    <span class="dismiss">I don't want a discount</span>
+</div>
 
-    <a class="cta" href="#get-a-quote" aria-label="Book Now">Book Now.</a>
 
-    <button role="button" class="close"></button>
-</aside>
 
 <style>
-    aside {
-        display: flex;
-        flex-direction: column;
+
+    .exit_popup_ctnr {
         position: fixed;
         inset: 0;
-        margin: auto;
         z-index: 10;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .exit_popup {
+        position: relative;
+        display: flex;
+        flex-direction: column;
         height: fit-content;
         justify-content: center;
         align-items: center;
         background-color: var(--light);
         width: fit-content;
-        padding: clamp(2rem,12vw,6rem) clamp(2rem,3vw,5rem);
-        border-radius: clamp(1rem,3vw,3rem);
+        padding: clamp(2rem,17vmin,8rem) clamp(2rem,4vw,10rem);
+        border-radius: clamp(1rem,3vw,1.5rem);
         text-align: center;
         max-width: 85vw;
+        min-width: clamp(10rem, 80vw, 61rem);
         box-sizing: border-box;
-        border: 0.6rem solid var(--c1-c);
-        box-shadow: 0 0rem 15rem 5rem var(--c2-a);
+        border: 0.3rem solid var(--c1-c);
+        box-shadow: 0 0rem 22rem 8rem var(--c2-d);
+        overflow: hidden;
     }
 
-    aside.hidden {
+    .exit_popup_ctnr.hidden {
         opacity: 0;
-        visibility: 0;
+        visibility: hidden;
         pointer-events: none;
     }
 
     .title {
-        font-size: clamp(2.1rem,9vmin,4.6rem);
+        font-size: clamp(2.1rem,7vmin,3.6rem);
         font-weight: 700;
         color: var(--c2-a);
     }
 
     .title b {
         color: var(--c2-b);
+        display: block;
+        font-size: 2em;
     }
 
     .text {
-        font-size: clamp(1.8rem, 3vw, 2.1rem);
+        font-size: clamp(1.8rem, 3vw, 1.9rem);
         margin-block: clamp(1rem,4vw,1.5rem) clamp(1rem,4vw,2.5rem);
         font-weight: 600;
         color: var(--dark-a);
-        width: 70%;
+        width: 90%;
     }
 
     .cta {
@@ -66,9 +87,8 @@
 
     .close {
         position: absolute;
-        position: absolute;
-        top: clamp(1rem, 2vw, 2rem);
-        right: clamp(1rem, 2vw, 2rem);
+        top: clamp(1rem,8vmin,4rem);
+        right: clamp(1rem,2vmin,2rem);
         width: 2rem;
         height: 2rem;
     }
@@ -91,17 +111,39 @@
     .close::before {
         transform: rotate(45deg);
     }
+
+    .vishyvka {
+        position: absolute;
+    }
+
+    .vishyvka:first-of-type {
+        top: 0;
+    }
+
+    .vishyvka:last-of-type {
+        bottom:0;
+        transform: scaleY(-1);
+    }
+    
+    .dismiss {
+        margin-top: 2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--light);
+        position: relative;
+        cursor: pointer;
+    }
 </style>
 
-<script>
-    const closeBts = document.querySelectorAll('.exit_popup .close, .exit_popup .cta')
+<script is:inline>
+    const closeBts = document.querySelectorAll('.exit_popup .close, .exit_popup .cta, .dismiss')
 
-    let exitPoput = document.querySelector('.exit_popup');
+    let exitPopup = document.querySelector('.exit_popup_ctnr');
 
     let exitPopupHasAppeared = false;
 
     function closePopup() {
-        exitPoput.classList.add('hidden')
+        exitPopup.classList.add('hidden')
     }
 
     for(let i = 0; i < closeBts.length; i++) {
@@ -114,12 +156,41 @@
                 if(!exitPopupHasAppeared) {
                     exitPopupHasAppeared = true;
 
-                    exitPoput.classList.remove('hidden')
+                    exitPopup.classList.remove('hidden')
                 } else {
                     return;
                 };
             })
-        }, 2000);
+        }, 20);
     });
+
+    let wentDown = false;
+    let wentBack = false;
+
+    let windowCurrentPosition;
+
+    if(window.matchMedia('(max-width:600px)').matches) {
+        setTimeout(() => {
+            window.addEventListener('scroll', function() {
+                if(!wentDown) {
+                    if(window.scrollY > (document.body.scrollHeight / 3)) {
+                        wentDown = true;
+                        windowCurrentPosition = window.scrollY;
+                        console.log(wentDown)
+                    }
+                } else {
+                    if(window.scrollY < windowCurrentPosition) {
+                        if(!exitPopupHasAppeared) {
+                            exitPopupHasAppeared = true;
+                            
+                            exitPopup.classList.remove('hidden')
+                        } else {
+                            return;
+                        };
+                    }
+                }
+            })
+        }, 20);
+    }
 
 </script>
