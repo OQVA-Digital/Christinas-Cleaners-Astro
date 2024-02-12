@@ -23,6 +23,7 @@ const testimonials = (await getCollection('testimonials')).sort((a, b) => {
 import {TEL, TEL_HREF, TEL_INTERNATIONAL, REGULAR_PRICE, DISCOUNT_PERCENTAGE} from '../consts'
 
 import ExitPopup from '../components/ExitPopup.astro';
+import DiscountGlobe from '../components/svg/DiscountGlobe.astro'
 
 ---
 
@@ -40,13 +41,13 @@ import ExitPopup from '../components/ExitPopup.astro';
                     <div class="content">
                         <h1><strong>Cleaning services</strong> with a <b class="colour">meaningful impact</b>.</h1>
     
-                        <h2>Welcome to <strong>Christina's Cleaners</strong>, your top choice for professional and reliable cleaning services in <strong class="colour">London Zones 1 & 2, and Oxford City.</strong></h2>
+                        <h2>Welcome to <strong>Christina's Cleaners</strong>, your top choice for professional and reliable cleaning services in <strong class="colour">Greater London, and Oxford City.</strong></h2>
 
                         <p><strong>Discover our services and the positive impact we're making today.</strong> By choosing us, you're choosing to spread the power of resilience and hope, contributing to a better life for all involved.</p>
     
                         <div class="cta_ctnr">
-                            <a class="cta" href="/contact" aria-label="Book Now">Book Now</a>
-                            <a href="#about-us" aria-label="Go to About Us">About us</a>
+                            <a class="cta" href="/contact" aria-label="Get a Quote">Get a Quote</a>
+                            <a href="#services" aria-label="Go to services">Our services</a>
                         </div>
                     </div>
                     
@@ -105,7 +106,7 @@ import ExitPopup from '../components/ExitPopup.astro';
                             </div>
                         </div>
 
-                        <a class="cta" href="#get-a-quote" aria-label="Book Now">Book Now</a>
+                        <a class="cta" href="#get-a-quote" aria-label="Get a Quote">Get a Quote</a>
                     </div>
 
                     
@@ -156,7 +157,7 @@ import ExitPopup from '../components/ExitPopup.astro';
                             </div>
                         </div>
 
-                        <a class="cta" href="#get-a-quote" aria-label="Book Now">Book Now</a>
+                        <a class="cta" href="#get-a-quote" aria-label="Get a Quote">Get a Quote</a>
                     </div> -->
                     
                     <div class="box">
@@ -176,7 +177,7 @@ import ExitPopup from '../components/ExitPopup.astro';
                             </div>
                         </div>
 
-                        <a class="cta" href="#get-a-quote" aria-label="Book Now">Book Now</a>
+                        <a class="cta" href="#get-a-quote" aria-label="Get a Quote">Get a Quote</a>
                     </div>
                     
                     <!-- <div class="box">
@@ -251,7 +252,7 @@ import ExitPopup from '../components/ExitPopup.astro';
                     <p><b>We offer more than impeccable cleaning services.</b> Every booking you make supports our mission to empower those who have faced adversity.</p>
 
                     <div class="cta_ctnr">
-                        <a href="#get-a-quote" class="cta" aria-label="Book Now">Book Now</a>
+                        <a href="#get-a-quote" class="cta" aria-label="Get a Quote">Get a Quote</a>
 
                         <a href=`tel:${TEL_HREF}` aria-label=`Call us at ${TEL_INTERNATIONAL}`>{TEL}</a>
                     </div>
@@ -338,6 +339,8 @@ import ExitPopup from '../components/ExitPopup.astro';
 	</main>
 
     <ExitPopup/>
+
+    <DiscountGlobe/>
 </Layout>
 
 <style>

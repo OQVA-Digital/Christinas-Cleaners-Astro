@@ -675,6 +675,8 @@ section.about {
 
 
 
+
+
 .about .social_impact {
     display: flex;
     flex-direction: column;
@@ -936,7 +938,7 @@ section.testimonials {
     }
 
     h1 {
-        font-size: clamp(3.2rem, calc(6vw - 1.7rem), 5.9rem);
+        font-size: clamp(3.7rem, calc(6vw - 4rem), 5.9rem);
         line-height: 1.2;
     }
 
