@@ -9,14 +9,18 @@
 
 <style>
     .discount_bt {
-        position: fixed;
+        position: sticky;
         width: clamp(8rem,22vmin,9rem);
         height: clamp(8rem,22vmin,9rem);
-        bottom: clamp(3rem,10vmin,23rem);
-        right: clamp(3rem,11vmin,7rem);
+        bottom: 3rem;
+        right: clamp(3rem,11vmin,5rem);
         z-index: 9;
         transform: scale(1);
-        transition:transform 0.1s ease
+        transition: transform 0.1s ease;
+        display: block;
+        margin-left: auto;
+        margin-top: calc((clamp(8rem,22vmin,9rem) + 2rem) * -1);
+        margin-bottom: 2rem;
     }
 
     .discount_bt:hover {
